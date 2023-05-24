@@ -54,7 +54,7 @@ html {
 .container img {
     display: flex;
     flex-shrink: 1;
-    width: 15   rem;
+    width: 15rem;
     margin-top:1rem;
 }
 
