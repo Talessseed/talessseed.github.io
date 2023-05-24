@@ -10,13 +10,15 @@ html {
     align-items:center;
     justify-content:space-between;
     padding:2.5vw;
-    margin-bottom:1.5rem;
+    margin-bottom:1.5em;
 }
    
 .header-menu {
     display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items:center;
-    font-size:1.5rem;
+    font-size:1.5em;
     font-weight: bold;
 }
 .header-menu a {
@@ -56,7 +58,7 @@ html {
     display:flex;
     align-items:center;
     font-weight:bold;
-    font-size: 2rem;
+    font-size: 2em;
 }
    
 body {
@@ -65,7 +67,7 @@ body {
     justify-content:space-between;
     padding:2.5vw;
     font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
-    font-size:1rem;
+    font-size:1em;
     line-height:normal;
     color:#fff;
     background-color:rgba(0, 0, 0, 0.93);
@@ -74,12 +76,12 @@ body {
 
 h1{
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 2em;
 }
 
 h2{
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1em;
 }
 
 a {
