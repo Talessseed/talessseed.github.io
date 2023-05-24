@@ -122,7 +122,9 @@ a.invisible:hover {
     padding: 0rem 0rem;
 }
 
-  
+a.invisible:active {
+    background-color:transparent;
+}
 
 /* Paper list */
 
