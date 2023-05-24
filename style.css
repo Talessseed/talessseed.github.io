@@ -83,11 +83,13 @@ a {
     color:#673ab7;
     display: inline-block;
     text-decoration:underline;
+    padding: 0.2rem 0.2rem;
 }
 
 a:hover {
     color:#fff;
     display: inline-block;
+    padding: 0.2rem 0.2rem;
     background-color:#673ab7;
     text-decoration:none;
 }
