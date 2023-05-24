@@ -31,16 +31,22 @@ html {
   
 .container {
     border: 5px solid transparent;
-    padding: 1rem;
+    /* padding: 1rem; */
     box-sizing: border-box;
     display:flex;
     align-items:center;
     font-weight:bold;
 }
 
+.container img {
+    display: flex;
+    width: 10rem;
+    margin-top:1rem;
+}
+
 .animated {
     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.93), rgba(0, 0, 0, 0.93)),
+        linear-gradient(rgb(20,20,20), rgb(20,20,20)),
         linear-gradient(180deg, rgb(103, 58, 183), cornflowerblue 50%, rgb(103, 58, 183));
     background-repeat: no-repeat;
     background-size: 100% 100%, 100% 200%;
@@ -55,22 +61,25 @@ html {
 }
 
 .header-title {
-    display:flex;
-    align-items:center;
-    font-weight:bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
     font-size: 2em;
+    margin-right: 1rem;
+    padding-top: 1rem;
 }
    
 body {
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    padding:2.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.5vw;
     font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
-    font-size:1em;
-    line-height:normal;
-    color:#fff;
-    background-color:rgba(0, 0, 0, 0.93);
+    font-size: 1em;
+    line-height: normal;
+    color: #fff;
+    background-color: rgb(20,20,20);
     
 }
 
@@ -85,20 +94,75 @@ h2{
 }
 
 a {
-    color:#673ab7;
+    color: #673ab7;
     display: inline-block;
-    text-decoration:underline;
+    text-decoration: underline;
     padding: 0.2rem 0.2rem;
 }
 
 a:hover {
-    color:#fff;
+    color: #fff;
     display: inline-block;
     padding: 0.2rem 0.2rem;
-    background-color:#673ab7;
-    text-decoration:none;
+    background-color: #673ab7;
+    text-decoration: none;
 }
 
 a:active {
+    background-color:cornflowerblue;
+}
+}
+  
 
+/* Paper list */
+
+.inline {
+    float: none;
+}
+
+ul.inline {
+    display: inline;
+    padding: 0;
+}
+li.inline {
+    display: inline-block;
+}
+
+ul.bibliography {
+    list-style: none;    
+}
+
+li.conference:before {
+    content: "◼";
+    display:inline-block;
+    color: #196ca3;
+    font-size: 1.5rem;
+}
+
+li.journal:before {
+    content: "◼";
+    display:inline-block;
+    color: #c32b72;
+    font-size: 1.5rem;
+}
+
+li.workshop:before {
+    content: "◼";
+    display:inline-block;
+    color: #4cbf50;
+    font-size: 1.5rem;
+}
+
+li.thesis:before {
+    content: "◼";
+    display:inline-block;
+    color: #f8c91f;
+    font-size: 1.5rem;
+}
+
+li.preprint:before {
+    content: "◼";
+    display:inline-block;
+    color: #606b70;
+    font-size: 1.5rem;
 }
