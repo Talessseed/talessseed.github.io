@@ -73,12 +73,10 @@ html {
 }
    
 body {
-    display: flex;
-    flex-direction: column;
+    display: block;
     padding: 2.5vw;
     font-family: 'Proxima Nova', Arial, sans-serif;
     font-size: 1em;
-    line-height: normal;
     color: #fff;
     background-color: rgb(20,20,20);   
 }
@@ -93,26 +91,17 @@ h2{
     font-size: 1em;
 }
 
-a {
+a:link, a:visited{
     color: #673ab7;
     display: inline-block;
     text-decoration: underline;
     padding: 0rem 0.2rem;
-    margin-bottom: 0;
-    border-bottom: 0;
-    padding-bottom: 0;
-    bottom: 0;
-    line-height: 1.65;
 }
 
 a:hover {
     color: #fff;
     display: inline-block;
     background-color: #673ab7;
-    margin-bottom: 0;
-    border-bottom: 0;
-    padding-bottom: 0;
-    bottom: 0;
     text-decoration: none;
 }
 
@@ -122,10 +111,8 @@ a:active {
 
 a.invisible {
     color: #fff; 
-    display: block;
-    line-height: 2rem;
+    display: inline-block;
     text-decoration: none;
-    border-bottom: none;
     padding: 0rem 0rem;
 }
 
@@ -159,33 +146,33 @@ li.conference:before {
     content: "◼";
     display:inline-block;
     color: #196ca3;
-    font-size: 1.5rem;
+    font-size: 1.5em;
 }
 
 li.journal:before {
     content: "◼";
     display:inline-block;
     color: #c32b72;
-    font-size: 1.5rem;
+    font-size: 1.5em;
 }
 
 li.workshop:before {
     content: "◼";
     display:inline-block;
     color: #4cbf50;
-    font-size: 1.5rem;
+    font-size: 1.5em;
 }
 
 li.thesis:before {
     content: "◼";
     display:inline-block;
     color: #f8c91f;
-    font-size: 1.5rem;
+    font-size: 1.5em;
 }
 
 li.preprint:before {
     content: "◼";
     display:inline-block;
     color: #606b70;
-    font-size: 1.5rem;
+    font-size: 1.5em;
 }
