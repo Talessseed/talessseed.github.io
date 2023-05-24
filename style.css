@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova');
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+
 html {
- min-height:100%;
- -webkit-font-smoothing:antialiased;
- -moz-osx-font-smoothing:grayscale;
+    min-height:100%;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
 }
 
 .header {
@@ -74,9 +75,8 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     padding: 2.5vw;
-    font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
+    font-family: 'Proxima Nova', Arial, sans-serif;
     font-size: 1em;
     line-height: normal;
     color: #fff;
@@ -97,14 +97,22 @@ a {
     color: #673ab7;
     display: inline-block;
     text-decoration: underline;
-    padding: 0.2rem 0.2rem;
+    padding: 0rem 0.2rem;
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+    bottom: 0;
+    line-height: 1.65;
 }
 
 a:hover {
     color: #fff;
     display: inline-block;
-    padding: 0.2rem 0.2rem;
     background-color: #673ab7;
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+    bottom: 0;
     text-decoration: none;
 }
 
@@ -115,7 +123,9 @@ a:active {
 a.invisible {
     color: #fff; 
     display: block;
+    line-height: 2rem;
     text-decoration: none;
+    border-bottom: none;
     padding: 0rem 0rem;
 }
 
