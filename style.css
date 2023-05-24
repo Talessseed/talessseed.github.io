@@ -180,7 +180,7 @@ li.inline {
     display: inline-block;
 }
 
-ul.bibliography {
+ul.custom {
     list-style: none;    
 }
 
@@ -216,5 +216,12 @@ li.preprint:before {
     content: "◼";
     display:inline-block;
     color: #606b70;
+    font-size: 1.5em;
+}
+
+li:before {
+    content: "◼";
+    display:inline-block;
+    color: #673ab7;
     font-size: 1.5em;
 }
