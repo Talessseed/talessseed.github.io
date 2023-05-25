@@ -173,60 +173,53 @@ a.invisible:active {
 
 /* Paper list */
 
-.inline {
-    float: none;
+li.inline {
+    float: left;
+    padding-right: 3rem;
 }
 
 ul.inline {
-    display: inline;
-    padding: 0;
-}
-li.inline {
-    display: inline-block;
+    margin-bottom: 2rem;
 }
 
-ul.custom {
-    list-style: none;    
-}
-
-ul li:before {
-    content: "◼";
-    display:inline-block;
+li::marker {
+    content: "◼ ";
     color: #673ab7;
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    padding-inline: 1rem;
 }
 
-li.conference:before {
-    content: "◼";
-    display:inline-block;
+li.conference::marker {
+    content: "◼ ";
     color: #196ca3;
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    padding-inline: 1rem;
 }
 
-li.journal:before {
-    content: "◼";
-    display:inline-block;
+li.journal::marker {
+    content: "◼ ";
     color: #c32b72;
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    padding-inline: 1rem;
 }
 
-li.workshop:before {
-    content: "◼";
-    display:inline-block;
+li.workshop::marker {
+    content: "◼ ";
     color: #4cbf50;
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    padding-inline: 1rem;
 }
 
-li.thesis:before {
-    content: "◼";
-    display:inline-block;
+li.thesis::marker {
+    content: "◼ ";
     color: #f8c91f;
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    padding-inline: 1rem;
 }
 
-li.preprint:before {
-    content: "◼";
-    display:inline-block;
+li.preprint::marker {
+    content: "◼ ";
     color: #606b70;
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    padding-inline: 1rem;
 }
