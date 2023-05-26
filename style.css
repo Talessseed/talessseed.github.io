@@ -189,14 +189,14 @@ li::marker {
     padding-inline: 1rem;
 }
 
-li.conference::marker {
+li.conf::marker {
     content: "◼ ";
     color: #196ca3;
     font-size: 1.5rem;
     padding-inline: 1rem;
 }
 
-li.journal::marker {
+li.journals::marker {
     content: "◼ ";
     color: #c32b72;
     font-size: 1.5rem;
@@ -210,7 +210,7 @@ li.workshop::marker {
     padding-inline: 1rem;
 }
 
-li.thesis::marker {
+li.phd::marker {
     content: "◼ ";
     color: #f8c91f;
     font-size: 1.5rem;
