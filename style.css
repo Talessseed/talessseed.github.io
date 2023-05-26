@@ -179,6 +179,7 @@ li.inline {
 }
 
 ul.inline {
+    display: inline-block;
     margin-bottom: 2rem;
 }
 
