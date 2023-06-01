@@ -185,34 +185,40 @@ li::marker {
     content: "◼ ";
     color: #673ab7;
     font-size: 1.5rem;
+    vertical-align: bottom;
 }
 
 li.conf::marker {
     content: "◼ ";
     color: #196ca3;
     font-size: 1.5rem;
+    vertical-align: bottom;
 }
 
 li.journals::marker {
     content: "◼ ";
     color: #c32b72;
     font-size: 1.5rem;
+    vertical-align: bottom;
 }
 
 li.workshop::marker {
     content: "◼ ";
     color: #4cbf50;
     font-size: 1.5rem;
+    vertical-align: bottom;
 }
 
 li.phd::marker {
     content: "◼ ";
     color: #f8c91f;
     font-size: 1.5rem;
+    vertical-align: bottom;
 }
 
 li.preprint::marker {
     content: "◼ ";
     color: #606b70;
     font-size: 1.5rem;
+    vertical-align: bottom;
 }
