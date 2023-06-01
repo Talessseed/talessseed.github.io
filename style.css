@@ -23,7 +23,6 @@ html {
     align-items:center;
     justify-content:space-between;
     padding:2.5vw;
-    margin-bottom:1.5em;
 }
    
 .header-menu {
@@ -87,7 +86,6 @@ html {
     font-size: 2em;
     margin-right: 1rem;
     text-align: center;
-    padding-bottom: 1em;
     font-weight:bold;
     color: cornflowerblue;
 }
@@ -190,47 +188,40 @@ li.inline {
 
 ul.inline {
     display: inline-block;
-    margin-bottom: 2rem;
 }
 
 li::marker {
     content: "◼ ";
     color: #673ab7;
     font-size: 1.5rem;
-    padding-inline: 1rem;
 }
 
 li.conf::marker {
     content: "◼ ";
     color: #196ca3;
     font-size: 1.5rem;
-    padding-inline: 1rem;
 }
 
 li.journals::marker {
     content: "◼ ";
     color: #c32b72;
     font-size: 1.5rem;
-    padding-inline: 1rem;
 }
 
 li.workshop::marker {
     content: "◼ ";
     color: #4cbf50;
     font-size: 1.5rem;
-    padding-inline: 1rem;
 }
 
 li.phd::marker {
     content: "◼ ";
     color: #f8c91f;
     font-size: 1.5rem;
-    padding-inline: 1rem;
 }
 
 li.preprint::marker {
     content: "◼ ";
     color: #606b70;
     font-size: 1.5rem;
-    padding-inline: 1rem;
 }
