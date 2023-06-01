@@ -86,6 +86,7 @@ footer {
     flex-direction: row;
     float: right;
     color: #aaa;
+    margin-top: 1em;
 }
 
 /* General stuff */
