@@ -99,7 +99,7 @@ fetch("https://dblp.org/pid/291/6764.xml")
 
             // Append the year container to the main container
             container.appendChild(yearContainer);
-        });        
+        });
     })
     .catch(error => console.log(error));
 
