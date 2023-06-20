@@ -67,6 +67,7 @@ fetch("https://dblp.org/pid/291/6764.xml")
                     authorLink.textContent = author.name.replace(/\d+$/, "").trimEnd(); // Remove number at the end and trailing spaces
                     // authorLink.target = "_blank"; // Open link in a new tab
                     authorLink.rel = "noopener noreferrer"; // Security best practices
+                    authorLink.setAttribute('data-content', authorLink.textContent);
                     authorsSpan.appendChild(authorLink);
                     authorsSpan.appendChild(document.createTextNode(", "));
                 });
@@ -87,7 +88,7 @@ fetch("https://dblp.org/pid/291/6764.xml")
                     listItem.innerHTML += `<i>${venue}</i>`; // Make the venue italic
                 }
                 if (url) {
-                    listItem.innerHTML += `<a href="${url}"> [URL]</a>`;
+                    listItem.innerHTML += `<a data-content="[URL]" href="${url}"> [URL]</a>`;
                 }
 
                 // Append the list item to the paper list
