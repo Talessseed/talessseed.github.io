@@ -23,11 +23,15 @@ html {
     font-size:1.5em;
     font-weight: bold;
 }
-.header-menu a {
+.header-menu div {
     margin-left:1vw;
 }
-.header-menu a:not(:last-child) {
+.header-menu div:not(:last-child) {
     margin-right:1vw;
+}
+i.fa, i.fa-solid {
+    color: #FFD166; 
+    font-size :1.3rem;
 }
 
   
