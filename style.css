@@ -85,18 +85,19 @@ i.fa, i.fa-solid {
 }
 
 footer {
-    font-size: 1em;
-    display: flex;
-    flex-direction: row;
-    float: right;
-    color: #aaa;
-    margin-top: 1em;
+    position:absolute;
+    bottom:0;
+    right: 0;
+    height: 3em;
+    margin-right: 2em;
+    text-align: end;
 }
 
 /* General stuff */
    
 body {
     display: block;
+    min-height: 100%;
     padding: 2.5vw;
     font-family: 'Proxima Nova', Arial, sans-serif;
     font-size: 1em;
