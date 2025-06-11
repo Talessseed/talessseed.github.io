@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Homepage of Timothé Picavet">
+
+<html lang="en">
+
+<head>
+  <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Timothé Picavet's homepage</title>
+
+  <script src="links.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/munkres-js@1.2.2/munkres.js"></script>
+  <script src="animations.js" defer></script>
+
+  <style>
+    #gooey-canvas {
+      display:flex;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      overflow: hidden;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      filter: url('#goo');
+    }
+    circle { fill: #fff; }
+    g { transition: transform 0.6s ease; }
+  </style>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+  <header header class="header" role="banner">
+    <h1 class="header-title">
+      <div class="container animated">
+        <a class="invisible" href="index.html">
+          <img src="moi.jpg" alt="Me!">
+        </a>
+      </div>
+      Timothé Picavet
+    </h1>
+    <nav class="header-menu">
+      <div id="gooey-canvas">
+        <svg>
+          <g id="dots-layer"></g>
+        </svg>
+      </div>
+
+      <div data-shape="home">
+        <i class="fa fa-house fa-fw"></i>
+        <a href="index.html">Home</a>
+      </div>
+      <div data-shape="pub">
+        <i class="fa fa-book fa-fw"></i>
+        <a href="publications.html">Publications</a>
+      </div>
+      <div data-shape="talks">
+        <i class="fa-solid fa-person-chalkboard fa-fw"></i>
+        <a href="talks.html">Talks</a>
+      </div>
+      <div data-shape="teach">
+        <i class="fa-solid fa-school fa-fw"></i>
+        <a href="teaching.html">Teaching</a>
+      </div>
+      <div data-shape="cv">
+        <i class="fa-solid fa-user-graduate fa-fw"></i>
+        <a href="cv.pdf">CV</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- /!\ <i>Under construction</i> /!\ -->
+
+
+  <h1><i class="fa-solid fa-user"></i> About me</h1>
+  <p>
+    I am a 2nd year PhD student in <a href="https://www.labri.fr/">LaBRI</a>, Bordeaux, under the supervison
+    of
+    <a href="https://dept-info.labri.fr/~gavoille/">Cyril Gavoille</a>
+    and
+    <a href="https://www.labri.fr/perso/mbonamy/">Marthe Bonamy</a>.
+    I am in the
+    <a href="https://www.labri.fr/en/combinatorics-and-algorithms">CombAlgo department</a>
+    and in the
+    <a href="https://graphesetoptimisation.labri.fr/pmwiki.php">GO</a>
+    and 
+    <a href="https://algodist.labri.fr/index.php/Main/HomePage">AlgoDist</a>
+    teams.
+    You can contact me on  
+    <a
+      href="#"
+      data-contact="dGltb3RoZS5waWNhdmV0QHUtYm9yZGVhdXguZnI="
+      data-subj="QW4gQW1hemluZyBTdWJqZWN0"
+      data-mt="bWFpbHRvOg=="
+      onfocus="this.href = atob(this.dataset.mt) + atob(this.dataset.contact) + '?subject=' + atob(this.dataset.subj || '')"
+    >
+      name.surname@u-bordeaux.fr
+    </a>.
+  </p>
+
+  <h1><i class="fa-solid fa-book-open-reader"></i> Research interests</h1>
+  <p>
+    I am interested in discrete mathematics and theoretical computer science,
+    and more specifically:
+  <ul>
+    <li>graph theory and particularly structural graph theory,</li>
+    <li>parameterized algorithms,</li>
+    <li>and distributed computing (especially what surrounds LOCAL algorithms).</li>
+  </ul>
+  </p>
+
+  <h1><i class="fa-solid fa-newspaper"></i> News</h1>
+  <p>
+    <date>December 2024: </date>I visited <a href="https://home.zcu.cz/~kaisert/">Thomas Kaiser</a> at the University of West Bohemia.
+  </p>
+  <p>
+    <date>Oct-Nov 2024: </date>I visited <a href="https://perso.liris.cnrs.fr/tpierron/indexfr.html">Théo Pierron</a> and <a href="https://perso.ens-lyon.fr/edouard.bonnet/">Edouard Bonnet</a> in Lyon.
+  </p>
+</body>
+<footer>
+  This page was last updated in May 2025.
+</footer>
+
+</html>
