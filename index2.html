@@ -12,28 +12,7 @@
 
   <script src="links.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/munkres-js@1.2.2/munkres.js"></script>
-  <script src="animations.js" defer></script>
-
-  <style>
-    #gooey-canvas {
-      display:flex;
-      position: relative;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 2;
-      overflow: hidden;
-    }
-    svg {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      filter: url('#goo');
-    }
-    circle { fill: #fff; }
-    g { transition: transform 0.6s ease; }
-  </style>
-
+  <script id="animations" src="animations.js" data-first-shape="home" defer></script>
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -52,31 +31,32 @@
       Timothé Picavet
     </h1>
     <nav class="header-menu">
-      <div id="gooey-canvas">
-        <svg>
+      <div class="nav-menu">
+        <div data-shape="home">
+          <i class="fa fa-house fa-fw"></i>
+          <a href="index.html">Home</a>
+        </div>
+        <div data-shape="pub">
+          <i class="fa fa-book fa-fw"></i>
+          <a href="publications.html">Publications</a>
+        </div>
+        <div data-shape="talks">
+          <i class="fa-solid fa-person-chalkboard fa-fw"></i>
+          <a href="talks.html">Talks</a>
+        </div>
+        <div data-shape="teach">
+          <i class="fa-solid fa-school fa-fw"></i>
+          <a href="teaching.html">Teaching</a>
+        </div>
+        <div data-shape="cv">
+          <i class="fa-solid fa-user-graduate fa-fw"></i>
+          <a href="cv.pdf">CV</a>
+        </div>
+      </div>
+      <div id="point-canvas" class="nav-canvas">
+        <svg id="svg-box">
           <g id="dots-layer"></g>
         </svg>
-      </div>
-
-      <div data-shape="home">
-        <i class="fa fa-house fa-fw"></i>
-        <a href="index.html">Home</a>
-      </div>
-      <div data-shape="pub">
-        <i class="fa fa-book fa-fw"></i>
-        <a href="publications.html">Publications</a>
-      </div>
-      <div data-shape="talks">
-        <i class="fa-solid fa-person-chalkboard fa-fw"></i>
-        <a href="talks.html">Talks</a>
-      </div>
-      <div data-shape="teach">
-        <i class="fa-solid fa-school fa-fw"></i>
-        <a href="teaching.html">Teaching</a>
-      </div>
-      <div data-shape="cv">
-        <i class="fa-solid fa-user-graduate fa-fw"></i>
-        <a href="cv.pdf">CV</a>
       </div>
     </nav>
   </header>

@@ -1,8 +1,12 @@
-// main.js
 window.addEventListener('DOMContentLoaded', () => {
   const spacing = 10;
+  const radius = 3;
+  const size = 16;
+
+  const firstShape = document.getElementById('animations').dataset.firstShape;
 
   const svgGroup = document.getElementById('dots-layer');
+  const svgBox = document.getElementById('svg-box');
   let allDots = [];
 
   const createPointsFromGrid = grid =>
@@ -102,7 +106,6 @@ window.addEventListener('DOMContentLoaded', () => {
     ])
   };
 
-  const size = shapes.home.length;
 
   function setup(points) {
     svgGroup.innerHTML = '';
@@ -110,7 +113,7 @@ window.addEventListener('DOMContentLoaded', () => {
       const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
       g.setAttribute('transform', `translate(${x},${y})`);
       const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-      circle.setAttribute('r', '3');
+      circle.setAttribute('r', radius.toString());
       g.appendChild(circle);
       svgGroup.appendChild(g);
       return g;
@@ -147,7 +150,7 @@ window.addEventListener('DOMContentLoaded', () => {
       workingDots[i].setAttribute('transform', `translate(${tx},${ty})`);
     });
 
-    setTimeout(() => { allDots = workingDots.slice(); }, 600);
+    allDots = workingDots.slice();
   }
 
   document.querySelectorAll('.header-menu div').forEach(el => {
@@ -157,5 +160,8 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  setup(shapes.home);
+  setup(shapes[firstShape]);
+
+  svgBox.setAttribute("width", spacing*size + 2*radius);
+  svgBox.setAttribute("height", spacing*size + 2*radius);
 });

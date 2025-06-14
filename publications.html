@@ -7,8 +7,13 @@
 <head>
   <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
   <link rel="stylesheet" href="style.css">
+  
   <title>Timothé Picavet's homepage</title>
+
   <script src="links.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/munkres-js@1.2.2/munkres.js"></script>
+  <script id="animations" src="animations.js" data-first-shape="pub" defer></script>
+
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -26,25 +31,32 @@
       Timothé Picavet
     </h1>
     <nav class="header-menu">
-      <div>
-        <i class="fa fa-house fa-fw"></i>
-        <a href="index.html">Home</a>
+      <div class="nav-menu">
+        <div data-shape="home">
+          <i class="fa fa-house fa-fw"></i>
+          <a href="index.html">Home</a>
+        </div>
+        <div data-shape="pub">
+          <i class="fa fa-book fa-fw"></i>
+          <a href="publications.html">Publications</a>
+        </div>
+        <div data-shape="talks">
+          <i class="fa-solid fa-person-chalkboard fa-fw"></i>
+          <a href="talks.html">Talks</a>
+        </div>
+        <div data-shape="teach">
+          <i class="fa-solid fa-school fa-fw"></i>
+          <a href="teaching.html">Teaching</a>
+        </div>
+        <div data-shape="cv">
+          <i class="fa-solid fa-user-graduate fa-fw"></i>
+          <a href="cv.pdf">CV</a>
+        </div>
       </div>
-      <div>
-        <i class="fa fa-book fa-fw"></i>
-        <a href="publications.html">Publications</a>
-      </div>
-      <div>
-        <i class="fa-solid fa-person-chalkboard fa-fw"></i>
-        <a href="talks.html">Talks</a>
-      </div>
-      <div>
-        <i class="fa-solid fa-school fa-fw"></i>
-        <a href="teaching.html">Teaching</a>
-      </div>
-      <div>
-        <i class="fa-solid fa-user-graduate fa-fw"></i>
-        <a href="cv.pdf">CV</a>
+      <div id="point-canvas" class="nav-canvas">
+        <svg id="svg-box">
+          <g id="dots-layer"></g>
+        </svg>
       </div>
     </nav>
   </header>
