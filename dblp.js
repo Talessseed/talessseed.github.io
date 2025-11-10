@@ -44,7 +44,9 @@ fetch("https://dblp.org/pid/291/6764.xml")
                     name: removeNumber(author.textContent),
                     url: `https://dblp.org/pid/${author.getAttribute("pid")}.html`
                 }));
-                const venue = paper.getElementsByTagName("journal")[0]?.textContent || paper.getElementsByTagName("booktitle")[0]?.textContent;
+                var venue = paper.getElementsByTagName("journal")[0]?.textContent || paper.getElementsByTagName("booktitle")[0]?.textContent;
+                if (venue == "CoRR")
+                    venue = "On arXiv";
                 const url = paper.getElementsByTagName("ee")[0]?.textContent;
                 paperType = "preprint";
                 const paperFirstChild = get_firstchild(paper);
