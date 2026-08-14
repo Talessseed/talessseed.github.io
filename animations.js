@@ -85,6 +85,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const radius = 3;
   const size = 16;
   const morphDuration = 500;
+  const morphHandoffKey = 'matrix-morph-handoff-v1';
 
   const animationScript = document.getElementById('animations');
   const firstShape = animationScript?.dataset.firstShape || 'home';
@@ -98,6 +99,7 @@ window.addEventListener('DOMContentLoaded', () => {
   let demoTimers = [];
   let demoSequence = 0;
   let activeDemo = null;
+  let hasRunGraphDemo = false;
   let currentShapeKey = firstShape;
   let morphCleanupTimers = [];
   let morphCleanupListeners = [];
@@ -784,6 +786,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function runGraphDemo(event) {
     cancelDemo();
+    hasRunGraphDemo = true;
     const points = shapes[currentShapeKey] || shapes[firstShape] || shapes.home;
     const graph = buildShapeGraph(points);
     const seed = nearestNodeToEvent(points, event);
@@ -825,12 +828,22 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   document.querySelectorAll('.header-menu [data-shape]').forEach(element => {
+    const link = element.querySelector('a');
     const showShape = () => {
       const key = element.dataset.shape;
       if (!shapes[key]) return;
 
+      const leavingGraph = svgGroup.classList.contains('is-graph');
       cancelDemo();
+      if (leavingGraph) svgGroup.classList.add('is-graph-resetting');
       resetGraphPresentation();
+      if (leavingGraph) {
+        // Commit removal of the graph colors/radii without their short state
+        // transitions. Firefox can otherwise consume the following cx/cy
+        // mutation in that same style update and jump to the target matrix.
+        void svgGroup.getBoundingClientRect();
+        svgGroup.classList.remove('is-graph-resetting');
+      }
       restoreDemoControl();
       setGraphStatus('');
       currentShapeKey = key;
@@ -839,6 +852,41 @@ window.addEventListener('DOMContentLoaded', () => {
 
     element.addEventListener('pointerenter', showShape);
     element.addEventListener('focusin', showShape);
+
+    link?.addEventListener('click', event => {
+      if (
+        !hasRunGraphDemo ||
+        reducedMotion?.matches ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey ||
+        link.target ||
+        link.hasAttribute('download')
+      ) return;
+
+      const destination = new URL(link.href, window.location.href);
+      if (
+        destination.origin !== window.location.origin ||
+        !destination.pathname.toLowerCase().endsWith('.html')
+      ) return;
+
+      const points = allDots
+        .filter(dot => dot.isConnected)
+        .map(renderedDotPosition);
+      if (points.length === 0) return;
+
+      try {
+        window.sessionStorage.setItem(morphHandoffKey, JSON.stringify({
+          targetShape: element.dataset.shape,
+          createdAt: Date.now(),
+          points
+        }));
+      } catch {
+        // Navigation still works if storage is disabled.
+      }
+    });
   });
 
   pointCanvas.addEventListener('click', runGraphDemo);
@@ -853,11 +901,47 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   if (!shapes[currentShapeKey]) currentShapeKey = 'home';
-  setup(shapes[firstShape] || shapes.home);
+  let incomingMorphPoints = null;
+  try {
+    const storedHandoff = window.sessionStorage.getItem(morphHandoffKey);
+    window.sessionStorage.removeItem(morphHandoffKey);
+    if (storedHandoff) {
+      const handoff = JSON.parse(storedHandoff);
+      const fresh = Number.isFinite(handoff?.createdAt) &&
+        Date.now() - handoff.createdAt < 10000;
+      const validPoints = Array.isArray(handoff?.points) &&
+        handoff.points.length > 0 &&
+        handoff.points.length <= 200 &&
+        handoff.points.every(point =>
+          Array.isArray(point) &&
+          point.length === 2 &&
+          point.every(Number.isFinite)
+        );
+
+      if (
+        !reducedMotion?.matches &&
+        fresh &&
+        validPoints &&
+        handoff.targetShape === firstShape
+      ) {
+        incomingMorphPoints = handoff.points;
+      }
+    }
+  } catch {
+    // Ignore unavailable, stale, or malformed handoff data.
+  }
+
+  setup(incomingMorphPoints || shapes[firstShape] || shapes.home);
   restoreDemoControl();
 
   svgBox.setAttribute('width', canvasSize);
   svgBox.setAttribute('height', canvasSize);
   svgBox.setAttribute('viewBox', `0 0 ${canvasSize} ${canvasSize}`);
   svgBox.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+
+  if (incomingMorphPoints) {
+    window.requestAnimationFrame(() => {
+      animateTo(shapes[firstShape] || shapes.home);
+    });
+  }
 });

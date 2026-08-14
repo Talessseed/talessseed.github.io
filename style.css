@@ -319,6 +319,11 @@ body {
     transition: fill 0.12s ease, opacity 0.12s ease, stroke 0.12s ease !important;
 }
 
+#dots-layer.is-graph-resetting > g,
+#dots-layer.is-graph-resetting > g circle {
+    transition: none !important;
+}
+
 #dots-layer > g.is-merging-away {
     opacity: 0;
     transition: opacity 0.5s ease-in;
