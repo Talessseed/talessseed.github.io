@@ -1,103 +1,284 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Publications of Timothé Picavet">
-
 <html lang="en">
 
 <head>
-  <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research publications by Timothé Picavet in graph theory, distributed computing, and algorithms.">
+  <title>Publications | Timothé Picavet</title>
+
+  <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
   <link rel="stylesheet" href="style.css">
-  
-  <title>Timothé Picavet's homepage</title>
-
-  <script src="links.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/munkres-js@1.2.2/munkres.js"></script>
-  <script id="animations" src="animations.js" data-first-shape="pub" defer></script>
-
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
+
+  <script id="animations" src="animations.js" data-first-shape="pub" defer></script>
 </head>
 
 <body>
-  <header header class="header" role="banner">
-    <h1 class="header-title">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="header">
+    <div class="header-title">
       <div class="container animated">
-        <a class="invisible" href="index.html">
-          <img src="moi.jpg" alt="Me!">
+        <a class="invisible" href="index.html" aria-label="Timothé Picavet — home">
+          <picture>
+            <source srcset="moi-480.webp" type="image/webp">
+            <img src="moi-480.jpg" alt="Portrait of Timothé Picavet" width="480" height="480"
+              decoding="async" fetchpriority="high">
+          </picture>
         </a>
       </div>
-      Timothé Picavet
-    </h1>
-    <nav class="header-menu">
-      <div class="nav-menu">
+      <span class="site-name">Timothé Picavet</span>
+    </div>
+
+    <div class="header-menu">
+      <nav class="nav-menu" aria-label="Primary navigation">
         <div data-shape="home">
-          <i class="fa fa-house fa-fw"></i>
-          <a href="index.html">Home</a>
+          <a href="index.html">
+            <svg class="icon nav-icon" aria-hidden="true" focusable="false" viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4.1-2.8.1-4.2.1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2.1-2.4.2-3.6.2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9.1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7l255.8 224.5c8 7 12 15 11 24z"></path></svg>
+            <span>Home</span>
+          </a>
         </div>
         <div data-shape="pub">
-          <i class="fa fa-book fa-fw"></i>
-          <a href="publications.html">Publications</a>
+          <a href="publications.html" aria-current="page">
+            <svg class="icon nav-icon" aria-hidden="true" focusable="false" viewBox="0 0 448 512"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg>
+            <span>Publications</span>
+          </a>
         </div>
         <div data-shape="talks">
-          <i class="fa-solid fa-person-chalkboard fa-fw"></i>
-          <a href="talks.html">Talks</a>
+          <a href="talks.html">
+            <svg class="icon nav-icon" aria-hidden="true" focusable="false" viewBox="0 0 640 512"><path d="M192 96a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm-8 384V352h16V480c0 17.7 14.3 32 32 32s32-14.3 32-32V192h136c17.7 0 32-14.3 32-32s-14.3-32-32-32H384V64H576V256H384V224H320v48c0 26.5 21.5 48 48 48H592c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48H368c-26.5 0-48 21.5-48 48v80H177.1c-33.7 0-64.9 17.7-82.3 46.6l-58.3 97c-9.1 15.1-4.2 34.8 10.9 43.9s34.8 4.2 43.9-10.9L120 256.9V480c0 17.7 14.3 32 32 32s32-14.3 32-32z"></path></svg>
+            <span>Talks</span>
+          </a>
         </div>
         <div data-shape="teach">
-          <i class="fa-solid fa-school fa-fw"></i>
-          <a href="teaching.html">Teaching</a>
+          <a href="teaching.html">
+            <svg class="icon nav-icon" aria-hidden="true" focusable="false" viewBox="0 0 640 512"><path d="M337.8 5.4C327-1.8 313-1.8 302.2 5.4L166.3 96H48C21.5 96 0 117.5 0 144V464c0 26.5 21.5 48 48 48H256V416c0-35.3 28.7-64 64-64s64 28.7 64 64v96H592c26.5 0 48-21.5 48-48V144c0-26.5-21.5-48-48-48H473.7L337.8 5.4zM96 192h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V208c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V208zM96 320h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V336c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V336zM232 176a88 88 0 1 1 176 0 88 88 0 1 1-176 0zm88-48c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H336V144c0-8.8-7.2-16-16-16z"></path></svg>
+            <span>Teaching</span>
+          </a>
         </div>
         <div data-shape="cv">
-          <i class="fa-solid fa-user-graduate fa-fw"></i>
-          <a href="cv.pdf">CV</a>
+          <a href="cv.pdf" aria-label="Curriculum vitae (PDF)">
+            <svg class="icon nav-icon" aria-hidden="true" focusable="false" viewBox="0 0 448 512"><path d="M219.3.5c3.1-.6 6.3-.6 9.4 0l200 40C439.9 42.7 448 52.6 448 64s-8.1 21.3-19.3 23.5L352 102.9V160c0 70.7-57.3 128-128 128S96 230.7 96 160v-57.1L48 93.3v65.1l15.7 78.4c.9 4.7-.3 9.6-3.3 13.3S52.8 256 48 256H16c-4.8 0-9.3-2.1-12.4-5.9s-4.3-8.6-3.3-13.3L16 158.4V86.6C6.5 83.3 0 74.3 0 64 0 52.6 8.1 42.7 19.3 40.5l200-40zM111.9 327.7c10.5-3.4 21.8.4 29.4 8.5l71 75.5c6.3 6.7 17 6.7 23.3 0l71-75.5c7.6-8.1 18.9-11.9 29.4-8.5C401 348.6 448 409.4 448 481.3c0 17-13.8 30.7-30.7 30.7H30.7C13.8 512 0 498.2 0 481.3c0-71.9 47-132.7 111.9-153.6z"></path></svg>
+            <span>CV</span>
+          </a>
         </div>
-      </div>
-      <div id="point-canvas" class="nav-canvas">
-        <svg id="svg-box">
+      </nav>
+
+      <button id="point-canvas" class="nav-canvas" type="button"
+        aria-label="Select a dot to start a maximal independent set demonstration from that node"
+        title="Select a dot to start the graph algorithm">
+        <svg id="svg-box" viewBox="0 0 166 166" aria-hidden="true" focusable="false">
           <g id="dots-layer"></g>
         </svg>
-      </div>
-    </nav>
+      </button>
+      <span id="graph-demo-status" class="visually-hidden" aria-live="polite" aria-atomic="true"></span>
+    </div>
   </header>
 
-  <h1>Publications</h1>
-  <p> 
-    See also my <a href="https://arxiv.org/a/picavet_t_1.html">arXiv profile</a> for more up-to-date information.
-  </p>
-  <div>
-      <ul class="inline">
-          <li class="journals inline">Journal</li>
-          <li class="conf inline">Conference</li>
-          <li class="preprint inline">Preprint</li>
-          <li class="phd inline">Thesis</li>
+  <main id="main-content" class="page-content">
+    <h1>Publications</h1>
+    <p>
+      See also my <a href="https://arxiv.org/a/picavet_t_1.html">arXiv profile</a> for more up-to-date information.
+    </p>
+
+    <section aria-labelledby="publication-types-heading">
+      <h2 id="publication-types-heading">Publication types</h2>
+      <ul class="publication-legend inline">
+        <li class="journals inline">Journal</li>
+        <li class="conf inline">Conference</li>
+        <li class="preprint inline">Preprint</li>
+        <li class="phd inline">Thesis</li>
       </ul>
-  </div>
-  <br>
-  <!--     
-  <h2>2023</h2>
-  <ul>
-  <li class="preprint">
-      Sameep Dahal, Francesco D'Amore, Henrik Lievonen, Timothé Picavet, Jukka Suomela.
-      <b>Distributed derandomization revisited.</b> 
-      <i> CoRR abs/2305.07351</i> (2023)
-      <a href="https://doi.org/10.48550/arXiv.2305.07351">DOI</a>
-  </li>
-  </ul>
+    </section>
 
-  <h2>2021</h2>
-  <ul>
-  <li class="conference">
-      Timothé Picavet, Ngoc-Trung Nguyen, Binh-Minh Bui-Xuan.
-      <b>Temporal Matching on Geometric Graph Data.</b>
-      <i>CIAC 2021</i>: 394-408
-      <a href="https://doi.org/10.1007/978-3-030-75242-2_28">DOI</a>
-  </li> -->
+    <section class="publications" aria-labelledby="publication-list-heading">
+      <h2 id="publication-list-heading">Publication list</h2>
+      <div id="publication_list" aria-live="polite">
+        <!-- PUBLICATIONS:START -->
+        <section class="publication-year" aria-labelledby="publications-2026">
+          <h3 id="publications-2026">2026</h3>
+          <ul class="publication-list">
+            <li class="publication-entry conf" data-dblp-type="inproceedings">
+              <article>
+                <h4 class="publication-title">The Distributed Complexity Landscape on Trees Depends on the Knowledge About the Network Size.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/352/4487.html">Gustav Schmid</a>, <a href="https://dblp.org/pid/153/1197.html">Alkida Balliu</a>, <a href="https://dblp.org/pid/26/5426.html">Fabian Kuhn</a>, <a href="https://dblp.org/pid/153/1117.html">Dennis Olivetti</a>, <a href="https://dblp.org/pid/46/950-2.html">Sebastian Brandt</a></p>
+                <p class="publication-details"><em class="publication-venue">PODC</em> <span aria-hidden="true">·</span> <span class="publication-type">Conference</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.1145/3796701.3815947">Paper</a></p>
+              </article>
+            </li>
+            <li class="publication-entry conf" data-dblp-type="inproceedings">
+              <article>
+                <h4 class="publication-title">Meta-Theorems for Cuttable Distributed Problems.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/42/11199.html">Marthe Bonamy</a>, <a href="https://dblp.org/pid/g/CyrilGavoille.html">Cyril Gavoille</a>, <a href="https://dblp.org/pid/182/1881.html">Avinandan Das</a>, <a href="https://dblp.org/pid/80/1772.html">Jukka Suomela</a>, <a href="https://dblp.org/pid/273/4052.html">Alexandra Wesolek</a></p>
+                <p class="publication-details"><em class="publication-venue">PODC</em> <span aria-hidden="true">·</span> <span class="publication-type">Conference</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.1145/3796701.3815958">Paper</a></p>
+              </article>
+            </li>
+            <li class="publication-entry conf" data-dblp-type="inproceedings">
+              <article>
+                <h4 class="publication-title">A Polynomial Bound on the Pathwidth of Graphs Edge-Coverable by k Shortest Paths.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/139/0927.html">Julien Baste</a>, <a href="https://dblp.org/pid/318/4234.html">Lucas de Meyer</a>, <a href="https://dblp.org/pid/284/9064.html">Ugo Giocanti</a>, <a href="https://dblp.org/pid/331/0559.html">Étienne Objois</a></p>
+                <p class="publication-details"><em class="publication-venue">STACS</em> <span aria-hidden="true">·</span> <span class="publication-type">Conference</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.4230/LIPIcs.STACS.2026.10">Paper</a></p>
+              </article>
+            </li>
+            <li class="publication-entry conf" data-dblp-type="inproceedings">
+              <article>
+                <h4 class="publication-title">Testing H-Freeness on Sparse Graphs, the Case of Bounded Expansion.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/139/2584-2.html">Samuel Humeau</a>, <a href="https://dblp.org/pid/95/5094.html">Mamadou Moustapha Kanté</a>, <a href="https://dblp.org/pid/304/3857.html">Daniel Mock</a>, <a href="https://dblp.org/pid/197/0077.html">Alexandre Vigny</a></p>
+                <p class="publication-details"><em class="publication-venue">STACS</em> <span aria-hidden="true">·</span> <span class="publication-type">Conference</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.4230/LIPIcs.STACS.2026.55">Paper</a></p>
+              </article>
+            </li>
+            <li class="publication-entry preprint" data-dblp-type="article">
+              <article>
+                <h4 class="publication-title">The Distributed Complexity Landscape on Trees Depends on the Knowledge About the Network Size.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/153/1197.html">Alkida Balliu</a>, <a href="https://dblp.org/pid/46/950-2.html">Sebastian Brandt</a>, <a href="https://dblp.org/pid/26/5426.html">Fabian Kuhn</a>, <a href="https://dblp.org/pid/153/1117.html">Dennis Olivetti</a>, <a href="https://dblp.org/pid/352/4487.html">Gustav Schmid</a></p>
+                <p class="publication-details"><em class="publication-venue">CoRR</em> <span aria-hidden="true">·</span> <span class="publication-type">Preprint</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.48550/arXiv.2605.12787">arXiv</a></p>
+              </article>
+            </li>
+            <li class="publication-entry preprint" data-dblp-type="article">
+              <article>
+                <h4 class="publication-title">Meta-Theorems for Cuttable Distributed Problems.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/42/11199.html">Marthe Bonamy</a>, <a href="https://dblp.org/pid/182/1881.html">Avinandan Das</a>, <a href="https://dblp.org/pid/g/CyrilGavoille.html">Cyril Gavoille</a>, <a href="https://dblp.org/pid/80/1772.html">Jukka Suomela</a>, <a href="https://dblp.org/pid/273/4052.html">Alexandra Wesolek</a></p>
+                <p class="publication-details"><em class="publication-venue">CoRR</em> <span aria-hidden="true">·</span> <span class="publication-type">Preprint</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.48550/arXiv.2605.19157">arXiv</a></p>
+              </article>
+            </li>
+          </ul>
+        </section>
+        <section class="publication-year" aria-labelledby="publications-2025">
+          <h3 id="publications-2025">2025</h3>
+          <ul class="publication-list">
+            <li class="publication-entry conf" data-dblp-type="inproceedings">
+              <article>
+                <h4 class="publication-title">Induced Disjoint Paths Without an Induced Minor.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/49/10966.html">Pierre Aboulker</a>, <a href="https://dblp.org/pid/131/6607.html">Édouard Bonnet</a>, <a href="https://dblp.org/pid/91/4388.html">Nicolas Trotignon</a></p>
+                <p class="publication-details"><em class="publication-venue">ICALP</em> <span aria-hidden="true">·</span> <span class="publication-type">Conference</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.4230/LIPIcs.ICALP.2025.4">Paper</a></p>
+              </article>
+            </li>
+            <li class="publication-entry conf" data-dblp-type="inproceedings">
+              <article>
+                <h4 class="publication-title">Local Constant Approximation for Dominating Set on Graphs Excluding Large Minors.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/42/11199.html">Marthe Bonamy</a>, <a href="https://dblp.org/pid/g/CyrilGavoille.html">Cyril Gavoille</a>, <a href="https://dblp.org/pid/273/4052.html">Alexandra Wesolek</a></p>
+                <p class="publication-details"><em class="publication-venue">PODC</em> <span aria-hidden="true">·</span> <span class="publication-type">Conference</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.1145/3732772.3733531">Paper</a></p>
+              </article>
+            </li>
+            <li class="publication-entry preprint" data-dblp-type="article">
+              <article>
+                <h4 class="publication-title">Induced Disjoint Paths Without an Induced Minor.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/49/10966.html">Pierre Aboulker</a>, <a href="https://dblp.org/pid/131/6607.html">Édouard Bonnet</a>, <a href="https://dblp.org/pid/91/4388.html">Nicolas Trotignon</a></p>
+                <p class="publication-details"><em class="publication-venue">CoRR</em> <span aria-hidden="true">·</span> <span class="publication-type">Preprint</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.48550/arXiv.2502.05289">arXiv</a></p>
+              </article>
+            </li>
+            <li class="publication-entry preprint" data-dblp-type="article">
+              <article>
+                <h4 class="publication-title">Local Constant Approximation for Dominating Set on Graphs Excluding Large Minors.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/42/11199.html">Marthe Bonamy</a>, <a href="https://dblp.org/pid/g/CyrilGavoille.html">Cyril Gavoille</a>, <a href="https://dblp.org/pid/273/4052.html">Alexandra Wesolek</a></p>
+                <p class="publication-details"><em class="publication-venue">CoRR</em> <span aria-hidden="true">·</span> <span class="publication-type">Preprint</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.48550/arXiv.2504.01091">arXiv</a></p>
+              </article>
+            </li>
+            <li class="publication-entry preprint" data-dblp-type="article">
+              <article>
+                <h4 class="publication-title">Distributed Approximation Algorithms for Minimum Dominating Set in Locally Nice Graphs.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/42/11199.html">Marthe Bonamy</a>, <a href="https://dblp.org/pid/g/CyrilGavoille.html">Cyril Gavoille</a>, <a href="https://dblp.org/pid/273/4052.html">Alexandra Wesolek</a></p>
+                <p class="publication-details"><em class="publication-venue">CoRR</em> <span aria-hidden="true">·</span> <span class="publication-type">Preprint</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.48550/arXiv.2507.04960">arXiv</a></p>
+              </article>
+            </li>
+            <li class="publication-entry preprint" data-dblp-type="article">
+              <article>
+                <h4 class="publication-title">A polynomial bound on the pathwidth of graphs edge-coverable by k shortest paths.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/139/0927.html">Julien Baste</a>, <a href="https://dblp.org/pid/318/4234.html">Lucas de Meyer</a>, <a href="https://dblp.org/pid/284/9064.html">Ugo Giocanti</a>, <a href="https://dblp.org/pid/331/0559.html">Étienne Objois</a></p>
+                <p class="publication-details"><em class="publication-venue">CoRR</em> <span aria-hidden="true">·</span> <span class="publication-type">Preprint</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.48550/arXiv.2510.02901">arXiv</a></p>
+              </article>
+            </li>
+            <li class="publication-entry preprint" data-dblp-type="article">
+              <article>
+                <h4 class="publication-title">Bipartite Turán number of paths and other trees.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/42/11199.html">Marthe Bonamy</a>, <a href="https://dblp.org/pid/421/8438.html">Théotime Leclere</a></p>
+                <p class="publication-details"><em class="publication-venue">CoRR</em> <span aria-hidden="true">·</span> <span class="publication-type">Preprint</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.48550/arXiv.2511.07374">arXiv</a></p>
+              </article>
+            </li>
+            <li class="publication-entry preprint" data-dblp-type="article">
+              <article>
+                <h4 class="publication-title">Testing H-freeness on sparse graphs, the case of bounded expansion.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/139/2584-2.html">Samuel Humeau</a>, <a href="https://dblp.org/pid/95/5094.html">Mamadou Moustapha Kanté</a>, <a href="https://dblp.org/pid/304/3857.html">Daniel Mock</a>, <a href="https://dblp.org/pid/197/0077.html">Alexandre Vigny</a></p>
+                <p class="publication-details"><em class="publication-venue">CoRR</em> <span aria-hidden="true">·</span> <span class="publication-type">Preprint</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.48550/arXiv.2511.10230">arXiv</a></p>
+              </article>
+            </li>
+          </ul>
+        </section>
+        <section class="publication-year" aria-labelledby="publications-2024">
+          <h3 id="publications-2024">2024</h3>
+          <ul class="publication-list">
+            <li class="publication-entry conf" data-dblp-type="inproceedings">
+              <article>
+                <h4 class="publication-title">Distributed Binary Labeling Problems in High-Degree Graphs.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/301/8871.html">Henrik Lievonen</a>, <a href="https://dblp.org/pid/80/1772.html">Jukka Suomela</a></p>
+                <p class="publication-details"><em class="publication-venue">SIROCCO</em> <span aria-hidden="true">·</span> <span class="publication-type">Conference</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.1007/978-3-031-60603-8_22">Paper</a></p>
+              </article>
+            </li>
+          </ul>
+        </section>
+        <section class="publication-year" aria-labelledby="publications-2023">
+          <h3 id="publications-2023">2023</h3>
+          <ul class="publication-list">
+            <li class="publication-entry conf" data-dblp-type="inproceedings">
+              <article>
+                <h4 class="publication-title">A Parameterized Approximation Scheme for the Geometric Knapsack Problem with Wide Items.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/248/8733.html">Mathieu Mari</a>, <a href="https://dblp.org/pid/61/8036.html">Michal Pilipczuk</a></p>
+                <p class="publication-details"><em class="publication-venue">IPEC</em> <span aria-hidden="true">·</span> <span class="publication-type">Conference</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.4230/LIPIcs.IPEC.2023.33">Paper</a></p>
+              </article>
+            </li>
+            <li class="publication-entry conf" data-dblp-type="inproceedings">
+              <article>
+                <h4 class="publication-title">Brief Announcement: Distributed Derandomization Revisited.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/342/2654.html">Sameep Dahal</a>, <a href="https://dblp.org/pid/237/7510-1.html">Francesco d&#39;Amore</a>, <a href="https://dblp.org/pid/301/8871.html">Henrik Lievonen</a>, <a href="https://dblp.org/pid/80/1772.html">Jukka Suomela</a></p>
+                <p class="publication-details"><em class="publication-venue">DISC</em> <span aria-hidden="true">·</span> <span class="publication-type">Conference</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.4230/LIPIcs.DISC.2023.40">Paper</a></p>
+              </article>
+            </li>
+            <li class="publication-entry preprint" data-dblp-type="article">
+              <article>
+                <h4 class="publication-title">Distributed derandomization revisited.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/342/2654.html">Sameep Dahal</a>, <a href="https://dblp.org/pid/237/7510-1.html">Francesco d&#39;Amore</a>, <a href="https://dblp.org/pid/301/8871.html">Henrik Lievonen</a>, <a href="https://dblp.org/pid/80/1772.html">Jukka Suomela</a></p>
+                <p class="publication-details"><em class="publication-venue">CoRR</em> <span aria-hidden="true">·</span> <span class="publication-type">Preprint</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.48550/arXiv.2305.07351">arXiv</a></p>
+              </article>
+            </li>
+            <li class="publication-entry preprint" data-dblp-type="article">
+              <article>
+                <h4 class="publication-title">A parameterized approximation scheme for the 2D-Knapsack problem with wide items.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/61/8036.html">Michal Pilipczuk</a>, <a href="https://dblp.org/pid/248/8733.html">Mathieu Mari</a></p>
+                <p class="publication-details"><em class="publication-venue">CoRR</em> <span aria-hidden="true">·</span> <span class="publication-type">Preprint</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.48550/arXiv.2307.10672">arXiv</a></p>
+              </article>
+            </li>
+            <li class="publication-entry preprint" data-dblp-type="article">
+              <article>
+                <h4 class="publication-title">Distributed Binary Labeling Problems in High-Degree Graphs.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/301/8871.html">Henrik Lievonen</a>, <a href="https://dblp.org/pid/80/1772.html">Jukka Suomela</a></p>
+                <p class="publication-details"><em class="publication-venue">CoRR</em> <span aria-hidden="true">·</span> <span class="publication-type">Preprint</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.48550/arXiv.2312.12243">arXiv</a></p>
+              </article>
+            </li>
+          </ul>
+        </section>
+        <section class="publication-year" aria-labelledby="publications-2021">
+          <h3 id="publications-2021">2021</h3>
+          <ul class="publication-list">
+            <li class="publication-entry conf" data-dblp-type="inproceedings">
+              <article>
+                <h4 class="publication-title">Temporal Matching on Geometric Graph Data.</h4>
+                <p class="publication-authors">with <a href="https://dblp.org/pid/73/7780.html">Ngoc-Trung Nguyen</a>, <a href="https://dblp.org/pid/b/BinhMinhBuiXuan.html">Binh-Minh Bui-Xuan</a></p>
+                <p class="publication-details"><em class="publication-venue">CIAC</em> <span aria-hidden="true">·</span> <span class="publication-type">Conference</span> <span aria-hidden="true">·</span> <a class="publication-link" href="https://doi.org/10.1007/978-3-030-75242-2_28">Paper</a></p>
+              </article>
+            </li>
+          </ul>
+        </section>
+        <!-- PUBLICATIONS:END -->
+      </div>
+    </section>
+  </main>
 
-  <div id="publication_list"></div>
-  <script src="dblp.js"></script>
-  <br>
-  <small>Automatically fetched from DBLP. Recent arXiv entries may be missing.</small>
+  <footer class="site-footer">
+    <small>Automatically refreshed weekly from DBLP. Recent arXiv entries may be missing.</small>
+  </footer>
 </body>
 
 </html>
