@@ -258,14 +258,14 @@ export function renderPublications(publications) {
 
         return `    <li class="publication-entry ${escapeHtml(publication.type.cssClass)}" data-dblp-type="${escapeHtml(publication.element)}">
       <article>
-        <h4 class="publication-title">${title}</h4>${authorLine}
+        <h3 class="publication-title">${title}</h3>${authorLine}
         <p class="publication-details">${detailParts.join(" <span aria-hidden=\"true\">·</span> ")}</p>
       </article>
     </li>`;
       }).join("\n");
 
       return `<section class="publication-year" aria-labelledby="${yearId}">
-  <h3 id="${yearId}">${escapeHtml(year)}</h3>
+  <h2 id="${yearId}">${escapeHtml(year)}</h2>
   <ul class="publication-list">
 ${items}
   </ul>

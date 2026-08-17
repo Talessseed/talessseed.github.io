@@ -249,6 +249,10 @@ body {
 }
 
 /* Font Awesome Free 6.5.1 icons, CC BY 4.0: fontawesome.com/license/free */
+.icon-definitions {
+    display: none;
+}
+
 .icon {
     display: inline-block;
     flex: 0 0 auto;
@@ -265,6 +269,18 @@ body {
 
 .heading-icon {
     margin-right: 0.08em;
+}
+
+#about-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+#about-heading .heading-icon {
+    width: auto;
+    height: 0.78em;
+    margin-right: 0;
 }
 
 .season-icon {
@@ -468,20 +484,23 @@ date {
     margin-bottom: 0.95rem;
 }
 
-.talk-list > li > :is(strong, b):first-child,
 .year-section > ul > li > :is(strong, b):first-child,
-.talk-list .talk-title,
+.talk-title,
 .publication-title {
     display: block;
     margin-bottom: 0.1rem;
     line-height: 1.4;
 }
 
+.talk-title,
 .publication-title {
     margin-top: 0;
+    color: var(--text);
     font-size: 1rem;
+    text-wrap: wrap;
 }
 
+.talk-details,
 .publication-authors,
 .publication-meta,
 .publication-details {
@@ -490,35 +509,39 @@ date {
     line-height: 1.45;
 }
 
+.talk-details,
 .publication-meta,
 .publication-details,
-.talk-list li > i,
 .year-section > ul li > i {
     color: var(--muted);
 }
 
-.talk-list li > .season-icon,
+.publication-intro {
+    margin-bottom: 1.75rem;
+}
+
+.talk-details .season-icon,
 .year-section > ul li > .season-icon {
     color: var(--yellow);
 }
 
-.publication-year {
-    margin-top: 2rem;
-}
-
+.talk-list,
 .publication-list {
     padding-left: 1.5rem;
     list-style: none;
 }
 
+.talk-entry,
 .publication-entry {
     position: relative;
 }
 
+.talk-entry::marker,
 .publication-entry::marker {
     content: "";
 }
 
+.talk-entry::before,
 .publication-entry::before {
     position: absolute;
     top: 0.45rem;
@@ -567,6 +590,27 @@ date {
 
 .year-section > ul {
     margin-top: 0.35rem;
+}
+
+.talk-year,
+.publication-year {
+    margin-top: 2rem;
+}
+
+.talk-year > h3,
+.publication-year > h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.65rem;
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+}
+
+.page-content .talk-year + .talk-year,
+.page-content .publication-year + .publication-year {
+    margin-top: 2rem;
+}
+
+.talk-year > .talk-list {
+    margin-top: 0.55rem;
 }
 
 .publication-status {

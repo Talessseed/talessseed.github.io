@@ -79,137 +79,187 @@
     </div>
   </header>
 
+  <svg class="icon-definitions" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="season-leaf" viewBox="0 0 512 512">
+        <path d="M512 32c0 113.6-84.6 207.5-194.2 222-7.1-53.4-30.6-101.6-65.3-139.3C290.8 46.3 364 0 448 0h32c17.7 0 32 14.3 32 32zM0 96C0 78.3 14.3 64 32 64H64c123.7 0 224 100.3 224 224V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V320C100.3 320 0 219.7 0 96z"></path>
+      </symbol>
+      <symbol id="season-maple-leaf" viewBox="0 0 512 512">
+        <path d="M383.8 351.7c2.5-2.5 105.2-92.4 105.2-92.4l-17.5-7.5c-10-4.9-7.4-11.5-5-17.4 2.4-7.6 20.1-67.3 20.1-67.3s-47.7 10-57.7 12.5c-7.5 2.4-10-2.5-12.5-7.5s-15-32.4-15-32.4-52.6 59.9-55.1 62.3c-10 7.5-20.1 0-17.6-10 0-10 27.6-129.6 27.6-129.6s-30.1 17.4-40.1 22.4c-7.5 5-12.6 5-17.6-5C293.5 72.3 255.9 0 255.9 0s-37.5 72.3-42.5 79.8c-5 10-10 10-17.6 5-10-5-40.1-22.4-40.1-22.4S183.3 182 183.3 192c2.5 10-7.5 17.5-17.6 10-2.5-2.5-55.1-62.3-55.1-62.3S98.1 167 95.6 172s-5 9.9-12.5 7.5C73 177 25.4 167 25.4 167s17.6 59.7 20.1 67.3c2.4 6 5 12.5-5 17.4L23 259.3s102.6 89.9 105.2 92.4c5.1 5 10 7.5 5.1 22.5-5.1 15-10.1 35.1-10.1 35.1s95.2-20.1 105.3-22.6c8.7-.9 18.3 2.5 18.3 12.5S241 512 241 512h30s-5.8-102.7-5.8-112.8 9.5-13.4 18.4-12.5c10 2.5 105.2 22.6 105.2 22.6s-5-20.1-10-35.1 0-17.5 5-22.5z"></path>
+      </symbol>
+      <symbol id="season-sun" viewBox="0 0 512 512">
+        <path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391l-19.9 107.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1-192 0zm224 0a128 128 0 1 0-256 0 128 128 0 1 0 256 0z"></path>
+      </symbol>
+      <symbol id="season-snowflake" viewBox="0 0 448 512">
+        <path d="M224 0c17.7 0 32 14.3 32 32v30.1l15-15c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-49 49v70.3l61.4-35.8 17.7-66.1c3.4-12.8 16.6-20.4 29.4-17s20.4 16.6 17 29.4l-5.2 19.3 23.6-13.8c15.3-8.9 34.9-3.7 43.8 11.5s3.8 34.9-11.5 43.8l-25.3 14.8 21.7 5.8c12.8 3.4 20.4 16.6 17 29.4s-16.6 20.4-29.4 17l-67.7-18.1L287.5 256l60.9 35.5 67.7-18.1c12.8-3.4 26 4.2 29.4 17s-4.2 26-17 29.4l-21.7 5.8 25.3 14.8c15.3 8.9 20.4 28.5 11.5 43.8s-28.5 20.4-43.8 11.5l-23.6-13.8 5.2 19.3c3.4 12.8-4.2 26-17 29.4s-26-4.2-29.4-17l-17.7-66.1-61.3-35.8v70.3l49 49c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-15-15V480c0 17.7-14.3 32-32 32s-32-14.3-32-32v-30.1l-15 15c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l49-49v-70.3l-61.4 35.8-17.7 66.1c-3.4 12.8-16.6 20.4-29.4 17s-20.4-16.6-17-29.4l5.2-19.3-23.8 13.7c-15.3 8.9-34.9 3.7-43.8-11.5s-3.7-34.9 11.5-43.8l25.3-14.8-21.7-5.8c-12.8-3.4-20.4-16.6-17-29.4s16.6-20.4 29.4-17l67.7 18.1 60.9-35.4-60.9-35.5-67.7 18.1c-12.8 3.4-26-4.2-29.4-17s4.2-26 17-29.4l21.7-5.8-25.3-14.8C.6 162.7-4.5 143.1 4.4 127.9s28.5-20.4 43.8-11.5l23.6 13.8-5.2-19.3c-3.4-12.8 4.2-26 17-29.4s26 4.2 29.4 17l17.7 66.1 61.3 35.7v-70.4l-49-48.9c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l15 15V32c0-17.7 14.3-32 32-32z"></path>
+      </symbol>
+    </defs>
+  </svg>
+
   <main id="main-content" class="page-content">
     <h1>Talks</h1>
 
     <section class="year-list" aria-labelledby="talks-by-year-heading">
       <h2 id="talks-by-year-heading">You might have heard me talking about:</h2>
 
-      <section class="year-section" aria-labelledby="talks-2026">
+      <section class="year-section talk-year" aria-labelledby="talks-2026">        
         <h3 id="talks-2026">2026</h3>
         <ul class="talk-list">
-          <li>
-            <strong>Local Constant Approximation for Dominating Set on Graphs Excluding Large Minors.</strong>
-            <i>ENEDISC meeting, LaBRI, Bordeaux</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M512 32c0 113.6-84.6 207.5-194.2 222-7.1-53.4-30.6-101.6-65.3-139.3C290.8 46.3 364 0 448 0h32c17.7 0 32 14.3 32 32zM0 96C0 78.3 14.3 64 32 64H64c123.7 0 224 100.3 224 224V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V320C100.3 320 0 219.7 0 96z"></path></svg>
-            <a href="slides/podc2025-k2t.pdf" aria-label="Slides for Local Constant Approximation for Dominating Set on Graphs Excluding Large Minors at the ENEDISC meeting">[slides]</a>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Meta-Theorems for Cuttable Distributed Problems.</h4>
+              <p class="talk-details"><em class="talk-venue">PODC 2026</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-sun"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="slides/podc2026-meta-theorems.pdf" aria-label="Slides for Meta-Theorems for Cuttable Distributed Problems at PODC 2026">Slides</a></p>
+            </article>
+          </li>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Distributed algorithms and local structures in graphs.</h4>
+              <p class="talk-details">Thesis defense at <em class="talk-venue"> LaBRI, Bordeaux</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-sun"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="slides/defense.pdf" aria-label="Slides my thesis defense">Slides</a></p>
+            </article>
+          </li>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Local Constant Approximation for Dominating Set on Graphs Excluding Large Minors.</h4>
+              <p class="talk-details"><em class="talk-venue">ENEDISC meeting, LaBRI, Bordeaux</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-leaf"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="slides/podc2025-k2t.pdf" aria-label="Slides for Local Constant Approximation for Dominating Set on Graphs Excluding Large Minors at the ENEDISC meeting">Slides</a></p>
+            </article>
           </li>
         </ul>
       </section>
 
-      <section class="year-section" aria-labelledby="talks-2025">
+      <section class="year-section talk-year" aria-labelledby="talks-2025">
         <h3 id="talks-2025">2025</h3>
         <ul class="talk-list">
-          <li>
-            <strong>Induced Disjoint Paths Without an Induced Minor.</strong>
-            <i>JGAs 2025</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M383.8 351.7c2.5-2.5 105.2-92.4 105.2-92.4l-17.5-7.5c-10-4.9-7.4-11.5-5-17.4 2.4-7.6 20.1-67.3 20.1-67.3s-47.7 10-57.7 12.5c-7.5 2.4-10-2.5-12.5-7.5s-15-32.4-15-32.4-52.6 59.9-55.1 62.3c-10 7.5-20.1 0-17.6-10 0-10 27.6-129.6 27.6-129.6s-30.1 17.4-40.1 22.4c-7.5 5-12.6 5-17.6-5C293.5 72.3 255.9 0 255.9 0s-37.5 72.3-42.5 79.8c-5 10-10 10-17.6 5-10-5-40.1-22.4-40.1-22.4S183.3 182 183.3 192c2.5 10-7.5 17.5-17.6 10-2.5-2.5-55.1-62.3-55.1-62.3S98.1 167 95.6 172s-5 9.9-12.5 7.5C73 177 25.4 167 25.4 167s17.6 59.7 20.1 67.3c2.4 6 5 12.5-5 17.4L23 259.3s102.6 89.9 105.2 92.4c5.1 5 10 7.5 5.1 22.5-5.1 15-10.1 35.1-10.1 35.1s95.2-20.1 105.3-22.6c8.7-.9 18.3 2.5 18.3 12.5S241 512 241 512h30s-5.8-102.7-5.8-112.8 9.5-13.4 18.4-12.5c10 2.5 105.2 22.6 105.2 22.6s-5-20.1-10-35.1 0-17.5 5-22.5z"></path></svg>
-            <a href="slides/icalp2025-induced-minors.pdf" aria-label="Slides for Induced Disjoint Paths Without an Induced Minor at JGAs 2025">[slides]</a>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Induced Disjoint Paths Without an Induced Minor.</h4>
+              <p class="talk-details"><em class="talk-venue">JGAs 2025</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-maple-leaf"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="slides/icalp2025-induced-minors.pdf" aria-label="Slides for Induced Disjoint Paths Without an Induced Minor at JGAs 2025">Slides</a></p>
+            </article>
           </li>
-          <li>
-            <strong>Induced Disjoint Paths Without an Induced Minor.</strong>
-            <i>ICALP 2025</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391l-19.9 107.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1-192 0zm224 0a128 128 0 1 0-256 0 128 128 0 1 0 256 0z"></path></svg>
-            <a href="slides/icalp2025-induced-minors.pdf" aria-label="Slides for Induced Disjoint Paths Without an Induced Minor at ICALP 2025">[slides]</a>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Induced Disjoint Paths Without an Induced Minor.</h4>
+              <p class="talk-details"><em class="talk-venue">ICALP 2025</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-sun"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="slides/icalp2025-induced-minors.pdf" aria-label="Slides for Induced Disjoint Paths Without an Induced Minor at ICALP 2025">Slides</a></p>
+            </article>
           </li>
-          <li>
-            <strong>Local Constant Approximation for Dominating Set on Graphs Excluding Large Minors.</strong>
-            <i>PODC 2025</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M512 32c0 113.6-84.6 207.5-194.2 222-7.1-53.4-30.6-101.6-65.3-139.3C290.8 46.3 364 0 448 0h32c17.7 0 32 14.3 32 32zM0 96C0 78.3 14.3 64 32 64H64c123.7 0 224 100.3 224 224V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V320C100.3 320 0 219.7 0 96z"></path></svg>
-            <a href="slides/podc2025-k2t.pdf" aria-label="Slides for Local Constant Approximation for Dominating Set on Graphs Excluding Large Minors at PODC 2025">[slides]</a>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Local Constant Approximation for Dominating Set on Graphs Excluding Large Minors.</h4>
+              <p class="talk-details"><em class="talk-venue">PODC 2025</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-leaf"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="slides/podc2025-k2t.pdf" aria-label="Slides for Local Constant Approximation for Dominating Set on Graphs Excluding Large Minors at PODC 2025">Slides</a></p>
+            </article>
           </li>
-          <li>
-            <strong>Local Constant Approximation for Dominating Set on Graphs Excluding Large Minors.</strong>
-            <i>AlgoDist seminar, LaBRI, Bordeaux</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M512 32c0 113.6-84.6 207.5-194.2 222-7.1-53.4-30.6-101.6-65.3-139.3C290.8 46.3 364 0 448 0h32c17.7 0 32 14.3 32 32zM0 96C0 78.3 14.3 64 32 64H64c123.7 0 224 100.3 224 224V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V320C100.3 320 0 219.7 0 96z"></path></svg>
-            <a href="slides/bordeaux2025-k2t.pdf" aria-label="Slides for Local Constant Approximation for Dominating Set on Graphs Excluding Large Minors at the AlgoDist seminar">[slides]</a>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Local Constant Approximation for Dominating Set on Graphs Excluding Large Minors.</h4>
+              <p class="talk-details"><em class="talk-venue">AlgoDist seminar, LaBRI, Bordeaux</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-leaf"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="slides/bordeaux2025-k2t.pdf" aria-label="Slides for Local Constant Approximation for Dominating Set on Graphs Excluding Large Minors at the AlgoDist seminar">Slides</a></p>
+            </article>
           </li>
         </ul>
       </section>
 
-      <section class="year-section" aria-labelledby="talks-2024">
+      <section class="year-section talk-year" aria-labelledby="talks-2024">
         <h3 id="talks-2024">2024</h3>
         <ul class="talk-list">
-          <li>
-            <strong>Asymptotic dimension, distributed algorithms, and local graph concepts.</strong>
-            <i>Graph Theory Seminar, Pilsen</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M383.8 351.7c2.5-2.5 105.2-92.4 105.2-92.4l-17.5-7.5c-10-4.9-7.4-11.5-5-17.4 2.4-7.6 20.1-67.3 20.1-67.3s-47.7 10-57.7 12.5c-7.5 2.4-10-2.5-12.5-7.5s-15-32.4-15-32.4-52.6 59.9-55.1 62.3c-10 7.5-20.1 0-17.6-10 0-10 27.6-129.6 27.6-129.6s-30.1 17.4-40.1 22.4c-7.5 5-12.6 5-17.6-5C293.5 72.3 255.9 0 255.9 0s-37.5 72.3-42.5 79.8c-5 10-10 10-17.6 5-10-5-40.1-22.4-40.1-22.4S183.3 182 183.3 192c2.5 10-7.5 17.5-17.6 10-2.5-2.5-55.1-62.3-55.1-62.3S98.1 167 95.6 172s-5 9.9-12.5 7.5C73 177 25.4 167 25.4 167s17.6 59.7 20.1 67.3c2.4 6 5 12.5-5 17.4L23 259.3s102.6 89.9 105.2 92.4c5.1 5 10 7.5 5.1 22.5-5.1 15-10.1 35.1-10.1 35.1s95.2-20.1 105.3-22.6c8.7-.9 18.3 2.5 18.3 12.5S241 512 241 512h30s-5.8-102.7-5.8-112.8 9.5-13.4 18.4-12.5c10 2.5 105.2 22.6 105.2 22.6s-5-20.1-10-35.1 0-17.5 5-22.5z"></path></svg>
-            <a href="slides/pilsen2024-asdim.pdf" aria-label="Slides for Asymptotic dimension, distributed algorithms, and local graph concepts at the Graph Theory Seminar in Pilsen">[slides]</a>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Asymptotic dimension, distributed algorithms, and local graph concepts.</h4>
+              <p class="talk-details"><em class="talk-venue">Graph Theory Seminar, Pilsen</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-maple-leaf"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="slides/pilsen2024-asdim.pdf" aria-label="Slides for Asymptotic dimension, distributed algorithms, and local graph concepts at the Graph Theory Seminar in Pilsen">Slides</a></p>
+            </article>
           </li>
-          <li>
-            <strong>Algorithmes distribués et dimension asymptotique.</strong>
-            <i>JGAs 2024</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M383.8 351.7c2.5-2.5 105.2-92.4 105.2-92.4l-17.5-7.5c-10-4.9-7.4-11.5-5-17.4 2.4-7.6 20.1-67.3 20.1-67.3s-47.7 10-57.7 12.5c-7.5 2.4-10-2.5-12.5-7.5s-15-32.4-15-32.4-52.6 59.9-55.1 62.3c-10 7.5-20.1 0-17.6-10 0-10 27.6-129.6 27.6-129.6s-30.1 17.4-40.1 22.4c-7.5 5-12.6 5-17.6-5C293.5 72.3 255.9 0 255.9 0s-37.5 72.3-42.5 79.8c-5 10-10 10-17.6 5-10-5-40.1-22.4-40.1-22.4S183.3 182 183.3 192c2.5 10-7.5 17.5-17.6 10-2.5-2.5-55.1-62.3-55.1-62.3S98.1 167 95.6 172s-5 9.9-12.5 7.5C73 177 25.4 167 25.4 167s17.6 59.7 20.1 67.3c2.4 6 5 12.5-5 17.4L23 259.3s102.6 89.9 105.2 92.4c5.1 5 10 7.5 5.1 22.5-5.1 15-10.1 35.1-10.1 35.1s95.2-20.1 105.3-22.6c8.7-.9 18.3 2.5 18.3 12.5S241 512 241 512h30s-5.8-102.7-5.8-112.8 9.5-13.4 18.4-12.5c10 2.5 105.2 22.6 105.2 22.6s-5-20.1-10-35.1 0-17.5 5-22.5z"></path></svg>
-            <a href="slides/jga2024-asdim.pdf" aria-label="Slides for Algorithmes distribués et dimension asymptotique at JGAs 2024">[slides]</a>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Algorithmes distribués et dimension asymptotique.</h4>
+              <p class="talk-details"><em class="talk-venue">JGAs 2024</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-maple-leaf"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="slides/jga2024-asdim.pdf" aria-label="Slides for Algorithmes distribués et dimension asymptotique at JGAs 2024">Slides</a></p>
+            </article>
           </li>
-          <li>
-            <strong>Locally finding small dominating sets in K_{2,t}-minor-free graphs.</strong>
-            <i>Discrete Mathematics Seminar, TU Berlin</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 448 512"><path d="M224 0c17.7 0 32 14.3 32 32v30.1l15-15c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-49 49v70.3l61.4-35.8 17.7-66.1c3.4-12.8 16.6-20.4 29.4-17s20.4 16.6 17 29.4l-5.2 19.3 23.6-13.8c15.3-8.9 34.9-3.7 43.8 11.5s3.8 34.9-11.5 43.8l-25.3 14.8 21.7 5.8c12.8 3.4 20.4 16.6 17 29.4s-16.6 20.4-29.4 17l-67.7-18.1L287.5 256l60.9 35.5 67.7-18.1c12.8-3.4 26 4.2 29.4 17s-4.2 26-17 29.4l-21.7 5.8 25.3 14.8c15.3 8.9 20.4 28.5 11.5 43.8s-28.5 20.4-43.8 11.5l-23.6-13.8 5.2 19.3c3.4 12.8-4.2 26-17 29.4s-26-4.2-29.4-17l-17.7-66.1-61.3-35.8v70.3l49 49c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-15-15V480c0 17.7-14.3 32-32 32s-32-14.3-32-32v-30.1l-15 15c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l49-49v-70.3l-61.4 35.8-17.7 66.1c-3.4 12.8-16.6 20.4-29.4 17s-20.4-16.6-17-29.4l5.2-19.3-23.8 13.7c-15.3 8.9-34.9 3.7-43.8-11.5s-3.7-34.9 11.5-43.8l25.3-14.8-21.7-5.8c-12.8-3.4-20.4-16.6-17-29.4s16.6-20.4 29.4-17l67.7 18.1 60.9-35.4-60.9-35.5-67.7 18.1c-12.8 3.4-26-4.2-29.4-17s4.2-26 17-29.4l21.7-5.8-25.3-14.8C.6 162.7-4.5 143.1 4.4 127.9s28.5-20.4 43.8-11.5l23.6 13.8-5.2-19.3c-3.4-12.8 4.2-26 17-29.4s26 4.2 29.4 17l17.7 66.1 61.3 35.7v-70.4l-49-48.9c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l15 15V32c0-17.7 14.3-32 32-32z"></path></svg>
-            <a href="slides/berlin2024-local-MDS.pdf" aria-label="Slides for Locally finding small dominating sets in K-2-t-minor-free graphs at the Discrete Mathematics Seminar at TU Berlin">[slides]</a>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Locally finding small dominating sets in K_{2,t}-minor-free graphs.</h4>
+              <p class="talk-details"><em class="talk-venue">Discrete Mathematics Seminar, TU Berlin</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-snowflake"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="slides/berlin2024-local-MDS.pdf" aria-label="Slides for Locally finding small dominating sets in K-2-t-minor-free graphs at the Discrete Mathematics Seminar at TU Berlin">Slides</a></p>
+            </article>
           </li>
         </ul>
       </section>
 
-      <section class="year-section" aria-labelledby="talks-2023">
+      <section class="year-section talk-year" aria-labelledby="talks-2023">
         <h3 id="talks-2023">2023</h3>
         <ul class="talk-list">
-          <li>
-            <strong>Locally finding small dominating sets in K_{2,t}-minor-free graphs.</strong>
-            <i>JGAs 2023</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M383.8 351.7c2.5-2.5 105.2-92.4 105.2-92.4l-17.5-7.5c-10-4.9-7.4-11.5-5-17.4 2.4-7.6 20.1-67.3 20.1-67.3s-47.7 10-57.7 12.5c-7.5 2.4-10-2.5-12.5-7.5s-15-32.4-15-32.4-52.6 59.9-55.1 62.3c-10 7.5-20.1 0-17.6-10 0-10 27.6-129.6 27.6-129.6s-30.1 17.4-40.1 22.4c-7.5 5-12.6 5-17.6-5C293.5 72.3 255.9 0 255.9 0s-37.5 72.3-42.5 79.8c-5 10-10 10-17.6 5-10-5-40.1-22.4-40.1-22.4S183.3 182 183.3 192c2.5 10-7.5 17.5-17.6 10-2.5-2.5-55.1-62.3-55.1-62.3S98.1 167 95.6 172s-5 9.9-12.5 7.5C73 177 25.4 167 25.4 167s17.6 59.7 20.1 67.3c2.4 6 5 12.5-5 17.4L23 259.3s102.6 89.9 105.2 92.4c5.1 5 10 7.5 5.1 22.5-5.1 15-10.1 35.1-10.1 35.1s95.2-20.1 105.3-22.6c8.7-.9 18.3 2.5 18.3 12.5S241 512 241 512h30s-5.8-102.7-5.8-112.8 9.5-13.4 18.4-12.5c10 2.5 105.2 22.6 105.2 22.6s-5-20.1-10-35.1 0-17.5 5-22.5z"></path></svg>
-            <a href="slides/jga2023-local-MDS.pdf" aria-label="Slides for Locally finding small dominating sets in K-2-t-minor-free graphs at JGAs 2023">[slides]</a>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Locally finding small dominating sets in K_{2,t}-minor-free graphs.</h4>
+              <p class="talk-details"><em class="talk-venue">JGAs 2023</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-maple-leaf"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="slides/jga2023-local-MDS.pdf" aria-label="Slides for Locally finding small dominating sets in K-2-t-minor-free graphs at JGAs 2023">Slides</a></p>
+            </article>
           </li>
-          <li>
-            <strong>Brief Announcement: Distributed Derandomization Revisited.</strong>
-            <i>DISC 2023</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M383.8 351.7c2.5-2.5 105.2-92.4 105.2-92.4l-17.5-7.5c-10-4.9-7.4-11.5-5-17.4 2.4-7.6 20.1-67.3 20.1-67.3s-47.7 10-57.7 12.5c-7.5 2.4-10-2.5-12.5-7.5s-15-32.4-15-32.4-52.6 59.9-55.1 62.3c-10 7.5-20.1 0-17.6-10 0-10 27.6-129.6 27.6-129.6s-30.1 17.4-40.1 22.4c-7.5 5-12.6 5-17.6-5C293.5 72.3 255.9 0 255.9 0s-37.5 72.3-42.5 79.8c-5 10-10 10-17.6 5-10-5-40.1-22.4-40.1-22.4S183.3 182 183.3 192c2.5 10-7.5 17.5-17.6 10-2.5-2.5-55.1-62.3-55.1-62.3S98.1 167 95.6 172s-5 9.9-12.5 7.5C73 177 25.4 167 25.4 167s17.6 59.7 20.1 67.3c2.4 6 5 12.5-5 17.4L23 259.3s102.6 89.9 105.2 92.4c5.1 5 10 7.5 5.1 22.5-5.1 15-10.1 35.1-10.1 35.1s95.2-20.1 105.3-22.6c8.7-.9 18.3 2.5 18.3 12.5S241 512 241 512h30s-5.8-102.7-5.8-112.8 9.5-13.4 18.4-12.5c10 2.5 105.2 22.6 105.2 22.6s-5-20.1-10-35.1 0-17.5 5-22.5z"></path></svg>
-            <a href="slides/disc2023-derandomization.pdf" aria-label="Slides for Brief Announcement: Distributed Derandomization Revisited at DISC 2023">[slides]</a>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Brief Announcement: Distributed Derandomization Revisited.</h4>
+              <p class="talk-details"><em class="talk-venue">DISC 2023</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-maple-leaf"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="slides/disc2023-derandomization.pdf" aria-label="Slides for Brief Announcement: Distributed Derandomization Revisited at DISC 2023">Slides</a></p>
+            </article>
           </li>
-          <li>
-            <strong>Locally finding small dominating sets in K_{2,t}-minor-free graphs.</strong>
-            <i>AlGCo seminar, LIRMM, Montpellier</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M383.8 351.7c2.5-2.5 105.2-92.4 105.2-92.4l-17.5-7.5c-10-4.9-7.4-11.5-5-17.4 2.4-7.6 20.1-67.3 20.1-67.3s-47.7 10-57.7 12.5c-7.5 2.4-10-2.5-12.5-7.5s-15-32.4-15-32.4-52.6 59.9-55.1 62.3c-10 7.5-20.1 0-17.6-10 0-10 27.6-129.6 27.6-129.6s-30.1 17.4-40.1 22.4c-7.5 5-12.6 5-17.6-5C293.5 72.3 255.9 0 255.9 0s-37.5 72.3-42.5 79.8c-5 10-10 10-17.6 5-10-5-40.1-22.4-40.1-22.4S183.3 182 183.3 192c2.5 10-7.5 17.5-17.6 10-2.5-2.5-55.1-62.3-55.1-62.3S98.1 167 95.6 172s-5 9.9-12.5 7.5C73 177 25.4 167 25.4 167s17.6 59.7 20.1 67.3c2.4 6 5 12.5-5 17.4L23 259.3s102.6 89.9 105.2 92.4c5.1 5 10 7.5 5.1 22.5-5.1 15-10.1 35.1-10.1 35.1s95.2-20.1 105.3-22.6c8.7-.9 18.3 2.5 18.3 12.5S241 512 241 512h30s-5.8-102.7-5.8-112.8 9.5-13.4 18.4-12.5c10 2.5 105.2 22.6 105.2 22.6s-5-20.1-10-35.1 0-17.5 5-22.5z"></path></svg>
-            <a href="slides/montpellier2023-local-MDS.pdf" aria-label="Slides for Locally finding small dominating sets in K-2-t-minor-free graphs at the AlGCo seminar">[slides]</a>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Locally finding small dominating sets in K_{2,t}-minor-free graphs.</h4>
+              <p class="talk-details"><em class="talk-venue">AlGCo seminar, LIRMM, Montpellier</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-maple-leaf"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="slides/montpellier2023-local-MDS.pdf" aria-label="Slides for Locally finding small dominating sets in K-2-t-minor-free graphs at the AlGCo seminar">Slides</a></p>
+            </article>
           </li>
-          <li>
-            <strong>A parameterized approximation scheme for the 2D-Knapsack problem with wide items.</strong>
-            <i>AlGCo seminar, LIRMM, Montpellier</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M383.8 351.7c2.5-2.5 105.2-92.4 105.2-92.4l-17.5-7.5c-10-4.9-7.4-11.5-5-17.4 2.4-7.6 20.1-67.3 20.1-67.3s-47.7 10-57.7 12.5c-7.5 2.4-10-2.5-12.5-7.5s-15-32.4-15-32.4-52.6 59.9-55.1 62.3c-10 7.5-20.1 0-17.6-10 0-10 27.6-129.6 27.6-129.6s-30.1 17.4-40.1 22.4c-7.5 5-12.6 5-17.6-5C293.5 72.3 255.9 0 255.9 0s-37.5 72.3-42.5 79.8c-5 10-10 10-17.6 5-10-5-40.1-22.4-40.1-22.4S183.3 182 183.3 192c2.5 10-7.5 17.5-17.6 10-2.5-2.5-55.1-62.3-55.1-62.3S98.1 167 95.6 172s-5 9.9-12.5 7.5C73 177 25.4 167 25.4 167s17.6 59.7 20.1 67.3c2.4 6 5 12.5-5 17.4L23 259.3s102.6 89.9 105.2 92.4c5.1 5 10 7.5 5.1 22.5-5.1 15-10.1 35.1-10.1 35.1s95.2-20.1 105.3-22.6c8.7-.9 18.3 2.5 18.3 12.5S241 512 241 512h30s-5.8-102.7-5.8-112.8 9.5-13.4 18.4-12.5c10 2.5 105.2 22.6 105.2 22.6s-5-20.1-10-35.1 0-17.5 5-22.5z"></path></svg>
-            <a href="slides/montpellier2023-2D-knasack.pdf" aria-label="Slides for A parameterized approximation scheme for the 2D-Knapsack problem with wide items at the AlGCo seminar">[slides]</a>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">A parameterized approximation scheme for the 2D-Knapsack problem with wide items.</h4>
+              <p class="talk-details"><em class="talk-venue">AlGCo seminar, LIRMM, Montpellier</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-maple-leaf"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="slides/montpellier2023-2D-knasack.pdf" aria-label="Slides for A parameterized approximation scheme for the 2D-Knapsack problem with wide items at the AlGCo seminar">Slides</a></p>
+            </article>
           </li>
-          <li>
-            <strong>Brief Announcement: Distributed Derandomization Revisited.</strong>
-            <i>AlgoDist seminar, LaBRI, Bordeaux</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M383.8 351.7c2.5-2.5 105.2-92.4 105.2-92.4l-17.5-7.5c-10-4.9-7.4-11.5-5-17.4 2.4-7.6 20.1-67.3 20.1-67.3s-47.7 10-57.7 12.5c-7.5 2.4-10-2.5-12.5-7.5s-15-32.4-15-32.4-52.6 59.9-55.1 62.3c-10 7.5-20.1 0-17.6-10 0-10 27.6-129.6 27.6-129.6s-30.1 17.4-40.1 22.4c-7.5 5-12.6 5-17.6-5C293.5 72.3 255.9 0 255.9 0s-37.5 72.3-42.5 79.8c-5 10-10 10-17.6 5-10-5-40.1-22.4-40.1-22.4S183.3 182 183.3 192c2.5 10-7.5 17.5-17.6 10-2.5-2.5-55.1-62.3-55.1-62.3S98.1 167 95.6 172s-5 9.9-12.5 7.5C73 177 25.4 167 25.4 167s17.6 59.7 20.1 67.3c2.4 6 5 12.5-5 17.4L23 259.3s102.6 89.9 105.2 92.4c5.1 5 10 7.5 5.1 22.5-5.1 15-10.1 35.1-10.1 35.1s95.2-20.1 105.3-22.6c8.7-.9 18.3 2.5 18.3 12.5S241 512 241 512h30s-5.8-102.7-5.8-112.8 9.5-13.4 18.4-12.5c10 2.5 105.2 22.6 105.2 22.6s-5-20.1-10-35.1 0-17.5 5-22.5z"></path></svg>
-            <a href="slides/gt-algodist-local-derandomization.pdf" aria-label="Slides for Brief Announcement: Distributed Derandomization Revisited at the AlgoDist seminar">[slides]</a>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Brief Announcement: Distributed Derandomization Revisited.</h4>
+              <p class="talk-details"><em class="talk-venue">AlgoDist seminar, LaBRI, Bordeaux</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-maple-leaf"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="slides/gt-algodist-local-derandomization.pdf" aria-label="Slides for Brief Announcement: Distributed Derandomization Revisited at the AlgoDist seminar">Slides</a></p>
+            </article>
           </li>
-          <li>
-            <strong>A parameterized approximation scheme for the 2D-Knapsack problem with wide items.</strong>
-            <i>IPEC 2023</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391l-19.9 107.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1-192 0zm224 0a128 128 0 1 0-256 0 128 128 0 1 0 256 0z"></path></svg>
-            <a href="slides/ipec2023-2D-knapsack.pdf" aria-label="Slides for A parameterized approximation scheme for the 2D-Knapsack problem with wide items at IPEC 2023">[slides]</a>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">A parameterized approximation scheme for the 2D-Knapsack problem with wide items.</h4>
+              <p class="talk-details"><em class="talk-venue">IPEC 2023</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-sun"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="slides/ipec2023-2D-knapsack.pdf" aria-label="Slides for A parameterized approximation scheme for the 2D-Knapsack problem with wide items at IPEC 2023">Slides</a></p>
+            </article>
           </li>
-          <li>
-            <strong>Locally approximating dominating sets in K_{2,t}-minor-free graphs.</strong>
-            <i>MIMUW seminar, Warsaw</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 448 512"><path d="M224 0c17.7 0 32 14.3 32 32v30.1l15-15c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-49 49v70.3l61.4-35.8 17.7-66.1c3.4-12.8 16.6-20.4 29.4-17s20.4 16.6 17 29.4l-5.2 19.3 23.6-13.8c15.3-8.9 34.9-3.7 43.8 11.5s3.8 34.9-11.5 43.8l-25.3 14.8 21.7 5.8c12.8 3.4 20.4 16.6 17 29.4s-16.6 20.4-29.4 17l-67.7-18.1L287.5 256l60.9 35.5 67.7-18.1c12.8-3.4 26 4.2 29.4 17s-4.2 26-17 29.4l-21.7 5.8 25.3 14.8c15.3 8.9 20.4 28.5 11.5 43.8s-28.5 20.4-43.8 11.5l-23.6-13.8 5.2 19.3c3.4 12.8-4.2 26-17 29.4s-26-4.2-29.4-17l-17.7-66.1-61.3-35.8v70.3l49 49c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-15-15V480c0 17.7-14.3 32-32 32s-32-14.3-32-32v-30.1l-15 15c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l49-49v-70.3l-61.4 35.8-17.7 66.1c-3.4 12.8-16.6 20.4-29.4 17s-20.4-16.6-17-29.4l5.2-19.3-23.8 13.7c-15.3 8.9-34.9 3.7-43.8-11.5s-3.7-34.9 11.5-43.8l25.3-14.8-21.7-5.8c-12.8-3.4-20.4-16.6-17-29.4s16.6-20.4 29.4-17l67.7 18.1 60.9-35.4-60.9-35.5-67.7 18.1c-12.8 3.4-26-4.2-29.4-17s4.2-26 17-29.4l21.7-5.8-25.3-14.8C.6 162.7-4.5 143.1 4.4 127.9s28.5-20.4 43.8-11.5l23.6 13.8-5.2-19.3c-3.4-12.8 4.2-26 17-29.4s26 4.2 29.4 17l17.7 66.1 61.3 35.7v-70.4l-49-48.9c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l15 15V32c0-17.7 14.3-32 32-32z"></path></svg>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Locally approximating dominating sets in K_{2,t}-minor-free graphs.</h4>
+              <p class="talk-details"><em class="talk-venue">MIMUW seminar, Warsaw</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-snowflake"></use></svg></p>
+            </article>
           </li>
         </ul>
       </section>
 
-      <section class="year-section" aria-labelledby="talks-2022">
+      <section class="year-section talk-year" aria-labelledby="talks-2022">
         <h3 id="talks-2022">2022</h3>
         <ul class="talk-list">
-          <li>
-            <strong>Locally approximating dominating sets in K_{2,t}-minor-free graphs.</strong>
-            <i>GO seminar, LaBRI, Bordeaux</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391l-19.9 107.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1-192 0zm224 0a128 128 0 1 0-256 0 128 128 0 1 0 256 0z"></path></svg>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Locally approximating dominating sets in K_{2,t}-minor-free graphs.</h4>
+              <p class="talk-details"><em class="talk-venue">GO seminar, LaBRI, Bordeaux</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-sun"></use></svg></p>
+            </article>
           </li>
         </ul>
       </section>
 
-      <section class="year-section" aria-labelledby="talks-2021">
+      <section class="year-section talk-year" aria-labelledby="talks-2021">
         <h3 id="talks-2021">2021</h3>
         <ul class="talk-list">
-          <li>
-            <strong>Temporal Matching on Geometric Graph Data.</strong>
-            <i>CIAC 2021</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M512 32c0 113.6-84.6 207.5-194.2 222-7.1-53.4-30.6-101.6-65.3-139.3C290.8 46.3 364 0 448 0h32c17.7 0 32 14.3 32 32zM0 96C0 78.3 14.3 64 32 64H64c123.7 0 224 100.3 224 224V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V320C100.3 320 0 219.7 0 96z"></path></svg>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Temporal Matching on Geometric Graph Data.</h4>
+              <p class="talk-details"><em class="talk-venue">CIAC 2021</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-leaf"></use></svg></p>
+            </article>
           </li>
         </ul>
       </section>
 
-      <section class="year-section" aria-labelledby="talks-2020">
+      <section class="year-section talk-year" aria-labelledby="talks-2020">
         <h3 id="talks-2020">2020</h3>
         <ul class="talk-list">
-          <li>
-            <strong>Couplage temporel et géométrique.</strong>
-            <i>JGA 2020</i> <svg class="icon season-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M383.8 351.7c2.5-2.5 105.2-92.4 105.2-92.4l-17.5-7.5c-10-4.9-7.4-11.5-5-17.4 2.4-7.6 20.1-67.3 20.1-67.3s-47.7 10-57.7 12.5c-7.5 2.4-10-2.5-12.5-7.5s-15-32.4-15-32.4-52.6 59.9-55.1 62.3c-10 7.5-20.1 0-17.6-10 0-10 27.6-129.6 27.6-129.6s-30.1 17.4-40.1 22.4c-7.5 5-12.6 5-17.6-5C293.5 72.3 255.9 0 255.9 0s-37.5 72.3-42.5 79.8c-5 10-10 10-17.6 5-10-5-40.1-22.4-40.1-22.4S183.3 182 183.3 192c2.5 10-7.5 17.5-17.6 10-2.5-2.5-55.1-62.3-55.1-62.3S98.1 167 95.6 172s-5 9.9-12.5 7.5C73 177 25.4 167 25.4 167s17.6 59.7 20.1 67.3c2.4 6 5 12.5-5 17.4L23 259.3s102.6 89.9 105.2 92.4c5.1 5 10 7.5 5.1 22.5-5.1 15-10.1 35.1-10.1 35.1s95.2-20.1 105.3-22.6c8.7-.9 18.3 2.5 18.3 12.5S241 512 241 512h30s-5.8-102.7-5.8-112.8 9.5-13.4 18.4-12.5c10 2.5 105.2 22.6 105.2 22.6s-5-20.1-10-35.1 0-17.5 5-22.5z"></path></svg>
-            <a href="https://www-sop.inria.fr/coati/events/JGA2020/presentation/mardi-aprem/46-Picavet.Timothe.pdf" aria-label="Slides for Couplage temporel et géométrique at JGA 2020">[slides]</a>
+          <li class="talk-entry">
+            <article>
+              <h4 class="talk-title">Couplage temporel et géométrique.</h4>
+              <p class="talk-details"><em class="talk-venue">JGA 2020</em> <svg class="icon season-icon" aria-hidden="true" focusable="false"><use href="#season-maple-leaf"></use></svg> <span aria-hidden="true">·</span> <a class="talk-link" href="https://www-sop.inria.fr/coati/events/JGA2020/presentation/mardi-aprem/46-Picavet.Timothe.pdf" aria-label="Slides for Couplage temporel et géométrique at JGA 2020">Slides</a></p>
+            </article>
           </li>
         </ul>
       </section>
@@ -217,7 +267,7 @@
   </main>
 
   <footer class="site-footer">
-    <small>This page was last updated in December 2025.</small>
+    <small>This page was last updated in August 2026.</small>
   </footer>
 </body>
 
