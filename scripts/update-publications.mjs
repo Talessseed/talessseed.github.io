@@ -1,6 +1,7 @@
 import { readFile, rename, writeFile } from "node:fs/promises";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, resolve } from "node:path";
+import { setTimeout as delay } from "node:timers/promises";
 
 const START_MARKER = "<!-- PUBLICATIONS:START -->";
 const END_MARKER = "<!-- PUBLICATIONS:END -->";
@@ -9,6 +10,9 @@ const DEFAULT_SOURCES = [
   "https://dblp.org/pid/291/6764.xml",
   "https://dblp.uni-trier.de/pid/291/6764.xml",
 ];
+const HTTP_REDIRECTS = new Set([301, 302, 303, 307, 308]);
+const MAX_SOURCE_REQUESTS = 6;
+const MAX_REFRESH_DELAY_MS = 10_000;
 
 const PUBLICATION_ELEMENTS = new Set([
   "article",
@@ -297,18 +301,96 @@ export function replacePublicationsRegion(html, renderedPublications) {
   return `${html.slice(0, start + START_MARKER.length)}${newline}${indentedBlock}${newline}${markerIndent}${html.slice(end)}`;
 }
 
-async function loadSource(source) {
-  if (/^https?:\/\//i.test(source)) {
-    const response = await fetch(source, {
-      headers: {
-        Accept: "application/xml, text/xml;q=0.9",
-        "User-Agent": "timothe-picavet-publications-refresh/1.0",
-      },
-      signal: AbortSignal.timeout(20_000),
-    });
-    if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
-    return response.text();
+function refreshInstruction(headers, html) {
+  let refresh = headers.get("refresh");
+  if (!refresh) {
+    for (const match of html.matchAll(/<meta\b([^>]*)>/gi)) {
+      const attributes = Object.fromEntries(
+        Object.entries(parseAttributes(match[1])).map(([name, value]) => [name.toLowerCase(), value]),
+      );
+      if (attributes["http-equiv"]?.toLowerCase() === "refresh") {
+        refresh = attributes.content;
+        break;
+      }
+    }
   }
+
+  const match = refresh?.match(/^\s*(\d+(?:\.\d+)?)\s*;\s*url\s*=\s*(.+?)\s*$/i);
+  if (!match) return null;
+
+  const waitMs = Number(match[1]) * 1000;
+  if (waitMs > MAX_REFRESH_DELAY_MS) {
+    throw new Error(`DBLP requested a refresh delay longer than ${MAX_REFRESH_DELAY_MS / 1000} seconds.`);
+  }
+
+  return { waitMs, location: match[2].replace(/^(["'])(.*)\1$/, "$2") };
+}
+
+async function loadRemoteSource(source) {
+  const origin = new URL(source).origin;
+  const cookies = new Map();
+  // Bound the whole exchange, including the wait and XML response body.
+  const signal = AbortSignal.timeout(60_000);
+  let url = source;
+
+  for (let request = 0; request < MAX_SOURCE_REQUESTS; request += 1) {
+    const headers = {
+      Accept: "application/xml, text/xml;q=0.9",
+      "User-Agent": "timothe-picavet-publications-refresh/1.0",
+    };
+    if (cookies.size) {
+      headers.Cookie = Array.from(cookies, ([name, value]) => `${name}=${value}`).join("; ");
+    }
+
+    // fetch does not retain cookies or follow Refresh headers / HTML meta refreshes.
+    // DBLP's Anubis interstitial needs both, including cookies on its HTTP redirect.
+    const response = await fetch(url, { headers, redirect: "manual", signal });
+    for (const cookie of response.headers.getSetCookie()) {
+      const pair = cookie.split(";", 1)[0];
+      const separator = pair.indexOf("=");
+      if (separator > 0) {
+        const name = pair.slice(0, separator).trim();
+        const value = pair.slice(separator + 1);
+        if (!value || /;\s*max-age\s*=\s*0\s*(?:;|$)/i.test(cookie)) cookies.delete(name);
+        else cookies.set(name, value);
+      }
+    }
+
+    const body = await response.text();
+    let location;
+    let waitMs = 0;
+    if (HTTP_REDIRECTS.has(response.status)) {
+      location = response.headers.get("location");
+      if (!location) throw new Error(`HTTP ${response.status} redirect has no Location header.`);
+    } else {
+      if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
+      const isHtml = /^text\/html\b/i.test(response.headers.get("content-type") ?? "") ||
+        /<(?:!doctype\s+html|html)\b/i.test(body);
+      if (!isHtml) return body;
+
+      const refresh = refreshInstruction(response.headers, body);
+      if (!refresh) {
+        throw new Error("DBLP returned an HTML page (possibly a bot check) instead of publication XML, with no supported refresh.");
+      }
+      ({ location, waitMs } = refresh);
+      console.log("DBLP requested a browser-style refresh; waiting and retrying with its session cookies.");
+    }
+
+    const nextUrl = new URL(location, url);
+    // Keep the temporary session cookies on this source only. The mirror gets its own session.
+    if (nextUrl.origin !== origin || nextUrl.username || nextUrl.password) {
+      throw new Error("Refusing a DBLP redirect outside the source origin or containing credentials.");
+    }
+    if (request === MAX_SOURCE_REQUESTS - 1) break;
+    if (waitMs) await delay(waitMs, undefined, { signal });
+    url = nextUrl.href;
+  }
+
+  throw new Error(`DBLP exceeded the limit of ${MAX_SOURCE_REQUESTS} requests while redirecting or checking the session.`);
+}
+
+async function loadSource(source) {
+  if (/^https?:\/\//i.test(source)) return loadRemoteSource(source);
 
   const path = source.startsWith("file:") ? fileURLToPath(source) : resolve(source);
   return readFile(path, "utf8");
