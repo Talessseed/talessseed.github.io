@@ -212,6 +212,9 @@ function escapeHtml(value) {
 }
 
 function renderAuthors(authors) {
+  // Solo papers have no coauthor row, even when DBLP omits the author's PID.
+  if (authors.length <= 1) return "";
+
   const coauthors = authors.filter((author) => author.pid !== SITE_AUTHOR_PID);
   if (coauthors.length === 0) return "";
 
